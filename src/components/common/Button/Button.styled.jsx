@@ -1,6 +1,6 @@
 import styled, { css } from 'styled-components';
 import PropTypes from 'prop-types';
-import { inlineFlex } from '../../styles/mixins';
+import { inlineFlex } from '../../../styles/mixins';
 import { Icon } from '../Icon';
 
 export const StyledIcon = styled(Icon)`

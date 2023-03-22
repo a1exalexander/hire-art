@@ -3,7 +3,7 @@ import { ICON_TYPES } from '../Icon';
 import { Button } from './Button';
 
 export default {
-  title: 'Application/components/Button',
+  title: 'components/Button',
   component: Button,
   argTypes: {
     icon: {

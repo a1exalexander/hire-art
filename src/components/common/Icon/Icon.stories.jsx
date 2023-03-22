@@ -2,7 +2,7 @@ import React from 'react';
 import { Icon, ICON_TYPES } from './Icon';
 
 export default {
-  title: 'Application/components/Icon',
+  title: 'components/Icon',
   component: Icon,
   argTypes: {
     name: {
