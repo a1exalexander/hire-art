@@ -6,5 +6,8 @@ import { SociaIcons } from '../SocialIcons';
 export const StyledButton = styled(SociaIcons)`
   display: block;
   width: 28px;
-  height: 28px
+  height: 28px;
+  &:hover {
+    fill: #afa8a8;
+  }
 `;

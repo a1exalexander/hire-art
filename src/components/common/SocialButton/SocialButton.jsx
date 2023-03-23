@@ -13,5 +13,5 @@ SocialButton.propTypes = {
 }
 
 SocialButton.defaultProps = {
-  fill: "#07063D",
+  fill: "#FFFFFF",
 }
