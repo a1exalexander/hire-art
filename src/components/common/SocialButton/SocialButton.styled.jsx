@@ -8,6 +8,6 @@ export const StyledButton = styled(SociaIcons)`
   width: 28px;
   height: 28px;
   &:hover {
-    fill: #afa8a8;
+    fill: #d21a1a;
   }
 `;

@@ -3,6 +3,7 @@ import { SocialButton } from '../../common/SocialButton';
 import { Policy, Section, LinkPolicy } from './Footer.styled';
 
 export const Footer = () => {
+
   return (
     <Section>
       <Logo variant="footer"></Logo>
@@ -11,6 +12,8 @@ export const Footer = () => {
         <LinkPolicy href="/" alt='coPrivacyokie'>Privacy policy</LinkPolicy>
         <LinkPolicy href="/" alt='service'>Term of service</LinkPolicy>
       </Policy>
+
+
       <div className="socialList">
         <SocialButton name='gmail'></SocialButton>
         <SocialButton name='facebook'></SocialButton>
@@ -21,3 +24,4 @@ export const Footer = () => {
     </Section>
   );
 };
+
