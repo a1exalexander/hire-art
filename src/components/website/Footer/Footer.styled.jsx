@@ -1,6 +1,5 @@
-import styled, { css } from "styled-components";
-import PropTypes from "prop-types";
-import { Logo } from "../../common/Logo/Logo";
+import styled from "styled-components";
+import { light } from "../../../styles/theme";
 
 export const Section = styled.section`
   display: grid;
@@ -8,8 +7,7 @@ export const Section = styled.section`
   justify-items: center;
   align-items: center;
   width: 100%;
-  /* background-color: ${(props) => props.theme.Purple5}; */ //! НЕ РАБОТАЕТ
-  background-color: #07063d;
+  background-color: ${light.colors.Purple5}; 
   padding: 36px 0;
   @media screen and (max-width: 768px) {
     grid-template-columns: 1fr;
@@ -30,17 +28,16 @@ export const Policy = styled.div`
 `;
 
 export const LinkPolicy = styled.a`
-  font-family: "Poppins";
   font-weight: 400;
   font-size: 12px;
-  color: #ffffff;
+  color: ${light.colors.white};
   cursor: pointer;
   text-decoration: none;
   &:not(:last-child) {
     margin-right: 32px;
   }
   &:hover {
-    color: #afa8a8;
+    color:${light.colors.Purple2};
   }
   @media screen and (max-width: 768px) {
     &:not(:last-child) {
@@ -49,5 +46,7 @@ export const LinkPolicy = styled.a`
     }
   }
 `;
+
+
 
 

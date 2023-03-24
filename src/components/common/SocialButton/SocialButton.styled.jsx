@@ -7,7 +7,4 @@ export const StyledButton = styled(SociaIcons)`
   display: block;
   width: 28px;
   height: 28px;
-  &:hover {
-    fill: #d21a1a;
-  }
 `;

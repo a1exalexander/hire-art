@@ -1,7 +1,6 @@
 import { Logo } from "../../common/Logo";
-import { SocialButton } from '../../common/SocialButton';
 import { Policy, Section, LinkPolicy } from './Footer.styled';
-
+import { SocialButton } from '../../common/SocialButton'
 export const Footer = () => {
 
   return (
@@ -12,9 +11,7 @@ export const Footer = () => {
         <LinkPolicy href="/" alt='coPrivacyokie'>Privacy policy</LinkPolicy>
         <LinkPolicy href="/" alt='service'>Term of service</LinkPolicy>
       </Policy>
-
-
-      <div className="socialList">
+      <div>
         <SocialButton name='gmail'></SocialButton>
         <SocialButton name='facebook'></SocialButton>
         <SocialButton name='insta'></SocialButton>
