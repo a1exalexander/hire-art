@@ -24,7 +24,7 @@ export const StyledContainer = styled.div`
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     width: 100%;
-    padding-top: 60px;
+    padding-top: ${({ login }) => (login ? "80px" : "60px")};
     padding-bottom: 30px;
   }
 `;
@@ -37,6 +37,13 @@ export const UserActions = styled.div`
     position: fixed;
     bottom: 24px;
   }
+    @media (max-width: 640px) {
+    align-self: center;
+    flex-direction: column;
+    gap: 12px;
+    position: fixed;
+    bottom: 24px;
+  }
 `;
 
 export const JobsArtists = styled.div`
@@ -44,27 +51,28 @@ export const JobsArtists = styled.div`
   @media (max-width: 768px) {
     flex-direction: column;
     align-items: flex-start;
+    gap: 24px;
   }
 `;
 
 export const Wrapper = styled.div`
-@media (max-width: 768px) { 
-  position: fixed;
-  width: 100%;
-  height: 60px;
-  top: 0;
-  right: 0;
-  left: 0;
-  &::before {
-    content: "";
-    display: block;
-    height: 100%;
+  @media (max-width: 768px) {
+    position: fixed;
     width: 100%;
-    position: absolute;
-    background-color: ${light.colors.Purple1};
-    z-index: -1;
+    height: 60px;
+    top: 0;
+    right: 0;
+    left: 0;
+    &::before {
+      content: "";
+      display: block;
+      height: 100%;
+      width: 100%;
+      position: absolute;
+      background-color: ${light.colors.Purple1};
+      z-index: -1;
+    }
   }
-}
 `;
 
 export const UserActionBlock = styled.div`

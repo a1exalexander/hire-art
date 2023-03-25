@@ -26,6 +26,10 @@ export const Navigation = ({ name, email }) => {
     setLogin(true);
   };
 
+  // const getSize = (isOpen) => {
+  //   return isOpen ? 'big' : 'standard';
+  // };
+
   const [isOpen, setIsOpen] = useState(true);
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
@@ -33,12 +37,12 @@ export const Navigation = ({ name, email }) => {
 
   return (
     <>
-      <StyledContainer isOpen={isOpen}>
+      <StyledContainer login={login} isOpen={isOpen}>
         <JobsArtists>
-          <Button onClick={() => { }} variant="subtle">
+          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'}>
             Jobs
           </Button>
-          <Button onClick={() => { }} variant="subtle">
+          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'}>
             Artists
           </Button>
         </JobsArtists>
@@ -55,10 +59,10 @@ export const Navigation = ({ name, email }) => {
           </Wrapper>
         ) : (
           <UserActions>
-            <Button onClick={handleLogin} variant="subtle">
+            <Button onClick={handleLogin} variant="subtle" size={isOpen ? 'big' : 'standart'}>
               Login
             </Button>
-            <Button onClick={handleLogin}>Sign up</Button>
+            <Button onClick={handleLogin} size={isOpen ? 'big' : 'standart'}>Sign up</Button>
           </UserActions>
         )}
       </StyledContainer>
@@ -73,7 +77,7 @@ Navigation.propTypes = {
 };
 
 Navigation.defaultProps = {
-  name: "Agneshka",
-  email: "example@gmal.com",
+  name: "Jennifer C.",
+  email: "jennifer015@gmail.com",
 };
 

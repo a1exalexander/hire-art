@@ -11,6 +11,7 @@ export const StyledBurger = styled.div`
   display: none;
   transition: all 0.3s ease 0s;
   z-index: 50;
+  
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;

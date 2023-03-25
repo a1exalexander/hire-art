@@ -1,4 +1,5 @@
 import { Burger } from './Burger';
+import React from 'react';
 
 export default {
     title: 'components/Button/Burger',
@@ -7,5 +8,9 @@ export default {
 
 const Template = (args) => <Burger {...args} />;
 
+
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+    onClick: () => { },
+    isOpen: false,
+};
