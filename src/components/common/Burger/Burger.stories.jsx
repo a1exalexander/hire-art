@@ -1,7 +1,7 @@
 import { Burger } from './Burger';
 
 export default {
-    title: 'components/Burger',
+    title: 'components/Button/Burger',
     component: Burger,
 };
 

@@ -31,6 +31,7 @@ export const LinkPolicy = styled.a`
   font-weight: 400;
   font-size: 12px;
   color: ${light.colors.white};
+  transition: all 0.2s ease 0s;
   cursor: pointer;
   text-decoration: none;
   &:not(:last-child) {

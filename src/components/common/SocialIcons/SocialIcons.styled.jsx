@@ -9,7 +9,4 @@ export const StyledSocIcon = styled.a`
   &:not(:last-child) {
     margin-right: 18px;
   }
-  &:hover {
-    fill: red;
-  }
 `;
