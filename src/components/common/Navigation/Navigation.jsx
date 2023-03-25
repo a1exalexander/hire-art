@@ -10,6 +10,7 @@ import {
   UserInfo,
   UserActions,
   JobsArtists,
+  Wrapper,
 } from "./Navigation.styled";
 import avatar from "../../../assets/image/user_avatar.png";
 import { useState } from "react";
@@ -17,15 +18,17 @@ import { Burger } from "../Burger/Burger";
 
 
 export const Navigation = ({ name, email }) => {
+
   const [login, setLogin] = useState(false);
-  const [isOpen, setIsOpen] = useState(true);
 
-  const handleBurgerClick = () => {
-    setIsOpen(!isOpen);
-  };
-
+  //* Добавить проверку на логинизацию 
   const handleLogin = () => {
     setLogin(true);
+  };
+
+  const [isOpen, setIsOpen] = useState(true);
+  const handleBurgerClick = () => {
+    setIsOpen(!isOpen);
   };
 
   return (
@@ -40,14 +43,16 @@ export const Navigation = ({ name, email }) => {
           </Button>
         </JobsArtists>
         {login ? (
-          <UserActionBlock>
-            <Avatar src={avatar} alt={name} />
-            <UserInfo>
-              <UserName>{name}</UserName>
-              <UserMail>{email}</UserMail>
-            </UserInfo>
-            <Arrow name="arrowDown"></Arrow>
-          </UserActionBlock>
+          <Wrapper>
+            <UserActionBlock>
+              <Avatar src={avatar} alt={name} />
+              <UserInfo>
+                <UserName>{name}</UserName>
+                <UserMail>{email}</UserMail>
+              </UserInfo>
+              <Arrow name="arrowDown"></Arrow>
+            </UserActionBlock>
+          </Wrapper>
         ) : (
           <UserActions>
             <Button onClick={handleLogin} variant="subtle">
@@ -69,6 +74,6 @@ Navigation.propTypes = {
 
 Navigation.defaultProps = {
   name: "Agneshka",
-  email: "example@gmaal.com",
+  email: "example@gmal.com",
 };
 

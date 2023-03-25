@@ -1,8 +1,7 @@
 import styled, { css } from "styled-components";
 import { Icon } from "../Icon";
 import { light } from "../../../styles/theme";
-import { Button } from '../Button/Button';
-
+import { Button } from "../Button/Button";
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -13,16 +12,19 @@ export const StyledContainer = styled.div`
     flex-direction: column;
     min-height: 90vh;
     background: ${light.colors.white};
-    transform: ${({ isOpen }) => (isOpen ? 'translateX(0)' : 'translateX(-100vw)')};
+    transform: ${({ isOpen }) =>
+    isOpen ? "translateX(0)" : "translateX(-100vw)"};
     position: absolute;
+    align-items: flex-start;
+    justify-content: flex-start;
     top: 0;
     left: 0;
-    right:0;
-    bottom:0;
+    right: 0;
+    bottom: 0;
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     width: 100%;
-    padding-top: 80px;
+    padding-top: 60px;
     padding-bottom: 30px;
   }
 `;
@@ -30,20 +32,51 @@ export const StyledContainer = styled.div`
 export const UserActions = styled.div`
   display: flex;
   align-items: center;
-
+  @media (max-width: 768px) {
+    align-self: center;
+    position: fixed;
+    bottom: 24px;
+  }
 `;
 
 export const JobsArtists = styled.div`
   display: flex;
   @media (max-width: 768px) {
     flex-direction: column;
+    align-items: flex-start;
   }
+`;
+
+export const Wrapper = styled.div`
+@media (max-width: 768px) { 
+  position: fixed;
+  width: 100%;
+  height: 60px;
+  top: 0;
+  right: 0;
+  left: 0;
+  &::before {
+    content: "";
+    display: block;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    background-color: ${light.colors.Purple1};
+    z-index: -1;
+  }
+}
 `;
 
 export const UserActionBlock = styled.div`
   display: flex;
   align-items: center;
   gap: 8px;
+  @media (max-width: 768px) {
+    order: -1;
+    position: fixed;
+    top: 6px;
+    left: 15px;
+  }
 `;
 
 export const UserInfo = styled.div`
@@ -69,8 +102,11 @@ export const Arrow = styled(Icon)`
   cursor: pointer;
   width: 18px;
   height: 18px;
-    @media (max-width: 768px) {
-    transform: rotate(180deg);
+  transition: all 0.3s ease 0s;
+  @media (any-hover: hover) {
+    &:hover {
+      transform: rotate(-180deg);
+    }
   }
 `;
 
