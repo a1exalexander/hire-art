@@ -2,13 +2,17 @@ import styled, { css } from "styled-components";
 import PropTypes from "prop-types";
 
 export const StyledSlideCard = styled.div`
-  max-width: 420px;
+  max-width: 440px;
   width: 100%;
   height: 100%;
+  min-height: 470px;
   background: #ffffff;
   border: 1px solid #c2cadf;
   border-radius: 12px;
   padding: 40px;
+  display: flex;
+  flex-direction: column;
+  margin-right: 48px;
 `;
 
 export const Title = styled.p`
@@ -22,7 +26,7 @@ export const Description = styled.p`
   font-size: 16px;
   line-height: 170%;
   color: #4b5565;
-  margin-bottom: 83px;
+  flex-grow: 1;
 `;
 export const Name = styled.p`
   font-weight: 500;
