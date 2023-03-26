@@ -1,7 +1,7 @@
 import { AccardionV2 } from './AccardionV2';
 
 export default {
-  title: 'components/Accardionv2',
+  title: 'components/AccardionV2',
   component: AccardionV2,
 };
 

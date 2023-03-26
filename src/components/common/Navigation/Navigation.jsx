@@ -21,16 +21,13 @@ export const Navigation = ({ name, email }) => {
 
   const [login, setLogin] = useState(false);
 
-  //* Добавить проверку на логинизацию 
+  //* Добавить проверку на логинизацию = в пропс добавить isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ? 
+
   const handleLogin = () => {
     setLogin(true);
   };
 
-  // const getSize = (isOpen) => {
-  //   return isOpen ? 'big' : 'standard';
-  // };
-
-  const [isOpen, setIsOpen] = useState(true);
+  const [isOpen, setIsOpen] = useState(false);
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
@@ -39,7 +36,7 @@ export const Navigation = ({ name, email }) => {
     <>
       <StyledContainer login={login} isOpen={isOpen}>
         <JobsArtists>
-          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'}>
+          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'} >
             Jobs
           </Button>
           <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'}>
@@ -74,6 +71,7 @@ export const Navigation = ({ name, email }) => {
 Navigation.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
+
 };
 
 Navigation.defaultProps = {
