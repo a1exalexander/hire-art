@@ -5,7 +5,11 @@ export default {
   component: AccardionV2,
 };
 
-const Template = (args) => <AccardionV2 {...args} />;
+const Template = (args) => (
+  <div style={{ backgroundColor: '#F3F5F8', padding: '32px' }}>
+    <AccardionV2 {...args} />
+  </div>
+);
 
 export const Default = Template.bind({});
 Default.args = {};

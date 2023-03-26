@@ -21,7 +21,7 @@ export const Navigation = ({ name, email }) => {
 
   const [login, setLogin] = useState(false);
 
-  //* Добавить проверку на логинизацию = в пропс добавить isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ? 
+  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ? 
 
   const handleLogin = () => {
     setLogin(true);
@@ -43,6 +43,7 @@ export const Navigation = ({ name, email }) => {
             Artists
           </Button>
         </JobsArtists>
+
         {login ? (
           <Wrapper>
             <UserActionBlock>

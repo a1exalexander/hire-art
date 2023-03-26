@@ -1,7 +1,6 @@
 import styled, { css } from "styled-components";
 import { Icon } from "../Icon";
 import { light } from "../../../styles/theme";
-import { Button } from "../Button/Button";
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -10,8 +9,7 @@ export const StyledContainer = styled.div`
   justify-content: space-between;
   @media (max-width: 768px) {
     flex-direction: column;
-    min-height: 90vh;
-    background: ${light.colors.white};
+    min-height: 100vh;
     transform: ${({ isOpen }) =>
     isOpen ? "translateX(0)" : "translateX(-100vw)"};
     position: absolute;
@@ -26,6 +24,11 @@ export const StyledContainer = styled.div`
     width: 100%;
     padding-top: ${({ login }) => (login ? "80px" : "60px")};
     padding-bottom: 30px;
+    ${(props) => {
+    return css`
+        background: ${props.theme.colors.white};
+      `;
+  }}
   }
 `;
 
@@ -37,7 +40,7 @@ export const UserActions = styled.div`
     position: fixed;
     bottom: 24px;
   }
-    @media (max-width: 640px) {
+  @media (max-width: 640px) {
     align-self: center;
     flex-direction: column;
     gap: 12px;
@@ -69,8 +72,12 @@ export const Wrapper = styled.div`
       height: 100%;
       width: 100%;
       position: absolute;
-      background-color: ${light.colors.Purple1};
       z-index: -1;
+      ${(props) => {
+    return css`
+          background-color: ${props.theme.colors.Purple1};
+        `;
+  }}
     }
   }
 `;
@@ -97,13 +104,21 @@ export const UserInfo = styled.div`
 export const UserName = styled.p`
   font-weight: 400;
   font-size: 16px;
-  color: ${light.colors.N10};
+  ${(props) => {
+    return css`
+      color: ${props.theme.colors.N10};
+    `;
+  }}
 `;
 
 export const UserMail = styled.p`
   font-weight: 400;
   font-size: 11px;
-  color: ${light.colors.N8};
+  ${(props) => {
+    return css`
+      color: ${props.theme.colors.N8};
+    `;
+  }}
 `;
 
 export const Arrow = styled(Icon)`
