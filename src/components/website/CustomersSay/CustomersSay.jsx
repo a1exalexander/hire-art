@@ -1,11 +1,12 @@
 import { Slider } from "../../common/Slider/Slider";
 import { Title } from "./CustomersSay.styled";
+import PropTypes from "prop-types";
 
 import photo_1 from "../../common/Slider/SliderImg/photo_1.svg";
 import photo_2 from "../../common/Slider/SliderImg/photo_2.svg";
 import photo_3 from "../../common/Slider/SliderImg/photo_3.svg";
 
-export const CustomersSay = () => {
+export const CustomersSay = ({ title }) => {
   const slides = [
     {
       id: 1,
@@ -43,8 +44,16 @@ export const CustomersSay = () => {
 
   return (
     <div>
-      <Title>What Our Customers Say</Title>
+      <Title>{title}</Title>
       <Slider slides={slides} />
     </div>
   );
+};
+
+CustomersSay.propTypes = {
+  title: PropTypes.string.isRequired,
+};
+
+CustomersSay.defaultProps = {
+  title: "What Our Customers Say",
 };

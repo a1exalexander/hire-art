@@ -3,6 +3,7 @@ import { Navigation } from "swiper";
 import "swiper/css";
 import { SlideCard } from "../SlideCard/SlideCard";
 import "./Slider.css";
+import PropTypes from "prop-types";
 
 const Arrow = ({ className }) => {
   return (
@@ -54,4 +55,8 @@ export const Slider = ({ slides = [] }) => {
       </div>
     </>
   );
+};
+
+Slider.propTypes = {
+  slides: PropTypes.array.isRequired,
 };

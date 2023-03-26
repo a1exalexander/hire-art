@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import {
   StyledSlideCard,
   Title,
@@ -23,4 +24,12 @@ export const SlideCard = ({ title, desc, name, pos, img }) => {
       </Wrapper>
     </StyledSlideCard>
   );
+};
+
+SlideCard.propTypes = {
+  title: PropTypes.string.isRequired,
+  desc: PropTypes.string.isRequired,
+  name: PropTypes.string.isRequired,
+  pos: PropTypes.string.isRequired,
+  img: PropTypes.string.isRequired,
 };
