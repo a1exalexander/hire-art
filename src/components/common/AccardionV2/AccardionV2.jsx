@@ -70,6 +70,3 @@ export const AccardionV2 = () => {
   );
 };
 
-// AccardionV2.propTypes = {
-//   onClick: PropTypes.func.isRequired,
-// };

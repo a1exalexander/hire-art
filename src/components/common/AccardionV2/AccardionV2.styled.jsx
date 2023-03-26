@@ -10,25 +10,29 @@ export const AccItem = styled.div`
   cursor: pointer;
   display: flex;
   flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: 32px;
   min-height: 84px;
+  @media (max-width: 768px) {
+    min-height: 54px;
+    padding: 16px;
+  }
   ${(props) => {
     return css`
       background-color: ${props.theme.colors.white};
       border: 1px solid ${props.theme.colors.N4};
+      border-radius: 6px;
     `;
   }}
-  border-radius: 6px;
-  @media (max-width: 768px) {
-    padding: 16px;
-  }
 `;
 
 export const AccItemHeader = styled.div`
   display: flex;
   min-width: 100%;
   justify-content: space-between;
+  align-items: center;
 `;
 
 export const AccItemTitle = styled.div`
@@ -45,7 +49,6 @@ export const AccItemTitle = styled.div`
 export const AccItemText = styled.div`
   font-size: 14px;
   line-height: 160%;
-  padding-top: 4px;
   max-height: 0;
   overflow: hidden;
   transition: max-height 0.3s ease-in-out;
