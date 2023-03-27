@@ -7,5 +7,13 @@ export default {
 
 const Template = (args) => <Navigation {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {};
+export const ClickOnLoginBtn = Template.bind({});
+ClickOnLoginBtn.args = {
+};
+
+
+
+
+
+
+
