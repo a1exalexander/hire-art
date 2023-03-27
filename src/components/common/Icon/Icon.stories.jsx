@@ -27,7 +27,7 @@ Single.args = {
 
 export const Multiple = () => {
   return (
-    <div style={{display: 'flex', flexWrap: 'wrap'}}>
+    <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {Object.values(ICON_TYPES).map((icon) => (
         <div key={icon} style={{ margin: '8px' }}>
           <Icon size={32} name={icon} />
