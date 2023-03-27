@@ -1,59 +1,58 @@
 import PropTypes from 'prop-types';
+import { ICON_TYPES } from '../../common/Icon';
 import { Accardion } from '../../common/Accardion/Accardion';
-import { IconPen} from '../../common/Icon/Icon'
 import {
   AccordionSection,
   AccordionInfo,
   Title,
   Subtitle,
   Link,
-  IconWrapper,
+  StyledIcon,
   AccordionGroup,
 } from './FAQ.styled';
 
 const accordionData = [
   {
-    title: "Why Hire Art?",
+    title: 'Why Hire Art?',
     content:
-      "Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna."
+      'Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna.',
   },
 
   {
-    title: "How much do I need to pay?",
+    title: 'How much do I need to pay?',
     content:
-      "Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna."
+      'Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna.',
   },
 
   {
-    title: "How much time does it take to find a job?",
+    title: 'How much time does it take to find a job?',
     content:
-      "Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna."
+      'Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna. Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna.',
   },
 
   {
-    title: "What salary amount is fair?",
+    title: 'What salary amount is fair?',
     content:
-      "Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna."
+      'Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna.',
   },
 
   {
-    title: "What amount is fair?",
+    title: 'What amount is fair?',
     content:
-      "Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna."
-  }
+      'Lorem ipsum dolor sit amet consectetur. Non nisl at aenean suspendisse sapien volutpat amet suspendisse. Purus mollis vehicula maecenas urna.',
+  },
 ];
 
-export const FAQ = ({title, children, link}) => {
+export const FAQ = ({ title, children, link }) => {
   return (
     <AccordionSection>
       <AccordionInfo>
         <Title>{title}</Title>
-        <Subtitle>{children}
-            <Link href = 'mailto: help@hireart.com'>{link}</Link>
+        <Subtitle>
+          {children}
+          <Link href="mailto: help@hireart.com">{link}</Link>
         </Subtitle>
-        <IconWrapper>
-          <IconPen/>
-        </IconWrapper>
+        <StyledIcon name={ICON_TYPES.pen} />
       </AccordionInfo>
       <AccordionGroup>
         {accordionData.map(({ title, content }) => (
