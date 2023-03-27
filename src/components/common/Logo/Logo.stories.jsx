@@ -6,6 +6,17 @@ export default {
 };
 
 const Template = (args) => <Logo {...args} />;
+const TemplateDark = (args) => (
+  <div style={{ backgroundColor: '#07063D', padding: '32px' }}>
+    <Logo {...args} />
+  </div>
+)
 
-export const Default = Template.bind({});
-Default.args = {};
+export const Header = Template.bind({});
+Header.args = {
+  variant: 'header',
+};
+export const Footer = TemplateDark.bind({});
+Footer.args = {
+  variant: 'footer',
+};
