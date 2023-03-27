@@ -1,5 +1,9 @@
+import { Navigation } from "./components/common/Navigation/Navigation";
+
 function App() {
-  return <div className="App">App</div>;
+  return <div className="App">
+    <Navigation></Navigation>
+  </div>;
 }
 
 export default App;
