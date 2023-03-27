@@ -1,4 +1,9 @@
 export const light = {
+  offset: {
+    pxDesktop: '48px',
+    pxMobile: '16px',
+    maxWidth: '1270px',
+  },
   colors: {
     background: '#f5f7fa',
     white: '#ffffff',

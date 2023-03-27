@@ -1,5 +1,6 @@
 import { withThemeFromJSXProvider } from '@storybook/addon-styling';
 import { ThemeProvider } from 'styled-components';
+import { withRouter } from 'storybook-addon-react-router-v6';
 import { GlobalStyles, light } from '../src/styles';
 
 export const parameters = {
@@ -13,6 +14,7 @@ export const parameters = {
 };
 
 export const decorators = [
+  withRouter,
   withThemeFromJSXProvider({
     GlobalStyles,
     themes: {
