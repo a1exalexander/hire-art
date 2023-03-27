@@ -8,4 +8,8 @@ export default {
 const Template = (args) => <FAQ {...args} />;
 
 export const Default = Template.bind({});
-Default.args = {};
+Default.args = {
+  title: 'Frequently Asked Questions',
+  children: 'Don`t see your question? email ',
+  link: 'help@hireart.com',
+};
