@@ -1,4 +1,4 @@
-import { Section, Quote, Highlight, Quoter } from "./Services.styled";
+import { Section, Quote, Highlight, Quoter } from "./Comment.styled";
 
 export const Comment = () => {
   return (
