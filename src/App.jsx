@@ -1,8 +1,8 @@
-import { Footer } from "./components/website/Footer/Footer";
+import { Navigation } from "./components/common/Navigation/Navigation";
 
 function App() {
   return <div className="App">
-    <Footer></Footer>
+    <Navigation></Navigation>
   </div>;
 }
 
