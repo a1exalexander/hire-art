@@ -1,0 +1,29 @@
+.swiper-slide {
+  width: auto !important;
+}
+.swiper-icon {
+  width: 8px;
+  height: 14px;
+  fill: #4b5565;
+}
+.swiper-icon--left {
+  transform: rotate(180deg);
+}
+.swiper-button {
+  width: 48px;
+  height: 48px;
+  border: 1px solid #c2cadf;
+  border-radius: 50%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+}
+.swiper-button:nth-child(1) {
+  margin-right: 24px;
+}
+.controller {
+  display: flex;
+  justify-content: center;
+  margin-top: 40px;
+}
