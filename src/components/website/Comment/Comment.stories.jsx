@@ -1,7 +1,7 @@
-import { Comment } from './Comment';
+import { Comment } from "./Comment";
 
 export default {
-  title: 'Website/Comment',
+  title: "Website/Comment",
   component: Comment,
 };
 
