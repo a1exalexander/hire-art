@@ -1,5 +1,5 @@
-import PropTypes from "prop-types";
-import { Button } from "../Button/Button";
+import PropTypes from 'prop-types';
+import { Button } from '../Button/Button';
 import {
   Arrow,
   StyledContainer,
@@ -11,17 +11,16 @@ import {
   UserActions,
   JobsArtists,
   Wrapper,
-} from "./Navigation.styled";
-import avatar from "../../../assets/image/user_avatar.png";
-import { useState } from "react";
-import { Burger } from "../Burger/Burger";
-
+} from './Navigation.styled';
+import avatar from '../../../assets/image/user_avatar.png';
+import { useState } from 'react';
+import { Burger } from '../Burger/Burger';
+import { Container } from '../Container';
 
 export const Navigation = ({ name, email }) => {
-
   const [login, setLogin] = useState(false);
 
-  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ? 
+  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ?
 
   const handleLogin = () => {
     setLogin(true);
@@ -33,13 +32,21 @@ export const Navigation = ({ name, email }) => {
   };
 
   return (
-    <>
+    <Container>
       <StyledContainer login={login} isOpen={isOpen}>
         <JobsArtists>
-          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'} >
+          <Button
+            onClick={() => {}}
+            variant="subtle"
+            size={isOpen ? 'big' : 'standart'}
+          >
             Jobs
           </Button>
-          <Button onClick={() => { }} variant="subtle" size={isOpen ? 'big' : 'standart'}>
+          <Button
+            onClick={() => {}}
+            variant="subtle"
+            size={isOpen ? 'big' : 'standart'}
+          >
             Artists
           </Button>
         </JobsArtists>
@@ -57,26 +64,30 @@ export const Navigation = ({ name, email }) => {
           </Wrapper>
         ) : (
           <UserActions>
-            <Button onClick={handleLogin} variant="subtle" size={isOpen ? 'big' : 'standart'}>
+            <Button
+              onClick={handleLogin}
+              variant="subtle"
+              size={isOpen ? 'big' : 'standart'}
+            >
               Login
             </Button>
-            <Button onClick={handleLogin} size={isOpen ? 'big' : 'standart'}>Sign up</Button>
+            <Button onClick={handleLogin} size={isOpen ? 'big' : 'standart'}>
+              Sign up
+            </Button>
           </UserActions>
         )}
       </StyledContainer>
       <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
-    </>
+    </Container>
   );
 };
 
 Navigation.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-
 };
 
 Navigation.defaultProps = {
-  name: "Jennifer C.",
-  email: "jennifer015@gmail.com",
+  name: 'Jennifer C.',
+  email: 'jennifer015@gmail.com',
 };
-

@@ -14,10 +14,9 @@
     "prop-types": "^15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "styled-components": "^5.3.9",
-    "swiper": "^9.1.1",
     "react-router-dom": "^6.9.0",
-    "styled-components": "^5.3.9"
+    "styled-components": "^5.3.9",
+    "swiper": "^9.1.1"
   },
   "devDependencies": {
     "@babel/core": "^7.21.3",
@@ -33,6 +32,7 @@
     "@types/react-dom": "^18.0.11",
     "@vitejs/plugin-react-swc": "^3.0.0",
     "babel-loader": "^8.3.0",
+    "storybook-addon-react-router-v6": "^0.3.5",
     "vite": "^4.2.0"
   }
 }

@@ -1,9 +1,13 @@
-import { Navigation } from "./components/common/Navigation/Navigation";
+import { GlobalStyles } from './styles';
+import { Home } from './components/website/pages/Home';
 
 function App() {
-  return <div className="App">
-    <Navigation></Navigation>
-  </div>;
+  return (
+    <>
+      <GlobalStyles />
+      <Home />
+    </>
+  );
 }
 
 export default App;

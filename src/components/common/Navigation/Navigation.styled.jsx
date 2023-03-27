@@ -1,6 +1,5 @@
-import styled, { css } from "styled-components";
-import { Icon } from "../Icon";
-import { light } from "../../../styles/theme";
+import styled, { css } from 'styled-components';
+import { Icon } from '../Icon';
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -11,7 +10,7 @@ export const StyledContainer = styled.div`
     flex-direction: column;
     min-height: 100vh;
     transform: ${({ isOpen }) =>
-    isOpen ? "translateX(0)" : "translateX(-100vw)"};
+    isOpen ? 'translateX(0)' : 'translateX(-100vw)'};
     position: absolute;
     align-items: flex-start;
     justify-content: flex-start;
@@ -22,7 +21,7 @@ export const StyledContainer = styled.div`
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     width: 100%;
-    padding-top: ${({ login }) => (login ? "80px" : "60px")};
+    padding-top: ${({ login }) => (login ? '80px' : '60px')};
     padding-bottom: 30px;
     ${(props) => {
     return css`
@@ -67,7 +66,7 @@ export const Wrapper = styled.div`
     right: 0;
     left: 0;
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       width: 100%;
