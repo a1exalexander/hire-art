@@ -2,6 +2,7 @@ import { Icon } from "../Icon";
 import { LogoHeader, LogoFooter } from "./Logo.styled";
 import PropTypes from "prop-types";
 
+
 export const Logo = ({ variant }) => {
   return (
     <>

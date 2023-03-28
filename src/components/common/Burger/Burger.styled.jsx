@@ -5,11 +5,11 @@ export const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 24px;
+  top: 20px;
   right: 16px;
   display: none;
   transition: all 0.3s ease 0s;
-  z-index: 50;
+  z-index: 101;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
