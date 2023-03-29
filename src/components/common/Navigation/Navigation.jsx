@@ -70,7 +70,20 @@ export const Navigation = () => {
   const handleUserActionClick = () => {
     SetIsDropDawnOpen(!isDropDawnOpen);
   };
-
+  // click Outside
+  const dropDawnRef = useRef(null);
+  useEffect(() => {
+    const handler = (e) => {
+      if (!dropDawnRef.current.contains(e.target)) {
+        SetIsDropDawnOpen(false);
+        console.log(dropDawnRef.current);
+      }
+    };
+    document.addEventListener("mousedown", handler);
+    return () => {
+      document.removeEventListener("mousedown", handler);
+    }
+  });
 
   return (
     <Container>
@@ -80,7 +93,7 @@ export const Navigation = () => {
             <Logo name="logoHeader"></Logo>
           </LogoContainer>
         )}
-        <StyledNav isLogin={isLogin} isOpen={isOpen}>
+        <StyledNav isLogin={isLogin} isOpen={isOpen} ref={dropDawnRef}>
           <LogoContainerMob>
             <Logo name="logoHeader"></Logo>
           </LogoContainerMob>
