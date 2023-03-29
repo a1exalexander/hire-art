@@ -21,21 +21,21 @@ export const StyledBurger = styled.div`
       height: 0.2rem;
       ${(props) => {
     return css`
-          background-color: ${({ open }) =>
-        open ? props.theme.colors.N4 : props.theme.colors.Purple5};
+          background-color: ${({ isOpen }) =>
+        isOpen ? props.theme.colors.N4 : props.theme.colors.Purple5};
           border-radius: 10px;
           &:nth-child(1) {
-            transform: ${({ open }) =>
-        open ? "rotate(45deg) translate(10px,0px)" : "rotate(0)"};
+            transform: ${({ isOpen }) =>
+        isOpen ? "rotate(45deg) translate(10px,5px)" : "rotate(0)"};
           }
           &:nth-child(2) {
-            transform: ${({ open }) =>
-        open ? "translateX(100%)" : "translateX(0)"};
-            opacity: ${({ open }) => (open ? 0 : 1)};
+            transform: ${({ isOpen }) =>
+        isOpen ? "translateX(100%)" : "translateX(0)"};
+            opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
           }
           &:nth-child(3) {
-            transform: ${({ open }) =>
-        open ? "rotate(-45deg) translate(13px,-4px)" : "rotate(0)"};
+            transform: ${({ isOpen }) =>
+        isOpen ? "rotate(-45deg) translate(9px,-4px)" : "rotate(0)"};
           }
         `;
   }}

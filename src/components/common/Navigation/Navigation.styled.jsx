@@ -16,6 +16,7 @@ export const FixedContainer = styled.div`
     padding: 14px 0px;
     height: 60px;
     background-color: ${(props) => props.theme.colors.P3};
+    border-radius: 0 0 6px 6px;
   }
   @media (max-width: 768px) {
     height: 72px;
@@ -64,7 +65,7 @@ export const StyledNav = styled.div`
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     width: 100%;
-    padding-top: ${({ login }) => (login ? "80px" : "60px")};
+    padding-top: ${({ isLogin }) => (isLogin ? "80px" : "60px")};
     padding-bottom: 30px;
     ${(props) => {
     return css`
@@ -81,14 +82,17 @@ export const UserActions = styled.div`
   @media (max-width: 768px) {
     align-self: center;
     position: fixed;
-    bottom: 24px;
+    bottom: 0;
+    background-color: ${(props) => props.theme.colors.P3};
+    padding: 8px 16px;
+    min-width: 100%;
+    border-radius: 10px 10px 0 0;
   }
-  @media (max-width: 640px) {
-    align-self: center;
-    flex-direction: column;
-    gap: 12px;
-    position: fixed;
-    bottom: 24px;
+  button {
+    @media (max-width: 768px) {
+      flex: 50%;
+      min-height: 44px;
+    }
   }
 `;
 
@@ -100,6 +104,16 @@ export const JobsArtists = styled.div`
     flex-direction: column;
     align-items: flex-start;
     gap: 24px;
+    padding-top: 24px;
+    width: 100%;
+    border-top: 1px solid ${(props) => props.theme.colors.N3};
+    a {
+      font-size: 20px;
+      width: 100%;
+    }
+    a:not(:last-child) {
+      margin-bottom: 32px;
+    }
   }
 `;
 
@@ -178,9 +192,11 @@ export const UserActionBlock = styled.div`
   gap: 8px;
   cursor: pointer;
   transition: box-shadow 0.3s ease 0s;
-  &:active ${Arrow} {
-    transform: rotate(-180deg);
-  }
+  ${props => props.isDropDawnOpen && css`
+    ${Arrow} {
+      transform: rotate(-180deg);
+    }
+  `}
   &:hover ${Avatar} {
     border-radius: 50%;
     box-shadow: 0 0 0 2px ${(props) => props.theme.colors.P5};

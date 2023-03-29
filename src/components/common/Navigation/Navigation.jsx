@@ -21,15 +21,27 @@ import { Container } from "../Container";
 import { Logo } from "../Logo/Logo";
 import { Link } from "../Link";
 import { useRef, useEffect, useState } from "react";
+import { UserDropDawn } from "./UserDropDawn/UserDropDawn";
 
 export const Navigation = () => {
   const user = {
     name: "Jennifer C.",
     email: "jennifer015@gmail.com",
-  }
-  const [login, setLogin] = useState(false);
-  const headerRef = useRef(null);
+  };
 
+  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) заменить isLoggedIn ?
+
+  // открывает UserActions
+  const [isLogin, setIsLogin] = useState(false);
+  const handleLogin = () => {
+    setIsLogin(true);
+  };
+  const handleLogout = () => {
+    setIsLogin(false);
+  };
+
+  //смена стилей при scroll
+  const headerRef = useRef(null);
   useEffect(() => {
     const scrollHeader = () => {
       if (
@@ -47,54 +59,61 @@ export const Navigation = () => {
     };
   }, []);
 
-  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ?
-
-  const handleLogin = () => {
-    setLogin(true);
-  };
-
+  // Burger
   const [isOpen, setIsOpen] = useState(false);
   const handleBurgerClick = () => {
     setIsOpen(!isOpen);
   };
 
+  // DropDawn
+  const [isDropDawnOpen, SetIsDropDawnOpen] = useState(false);
+  const handleUserActionClick = () => {
+    SetIsDropDawnOpen(!isDropDawnOpen);
+  };
+
+
   return (
     <Container>
       <FixedContainer ref={headerRef}>
-        {login ? null : <LogoContainer>
-          <Logo name="logoHeader"></Logo>
-        </LogoContainer>}
-        <StyledNav login={login} isOpen={isOpen}>
+        {isLogin ? null : (
+          <LogoContainer>
+            <Logo name="logoHeader"></Logo>
+          </LogoContainer>
+        )}
+        <StyledNav isLogin={isLogin} isOpen={isOpen}>
           <LogoContainerMob>
             <Logo name="logoHeader"></Logo>
           </LogoContainerMob>
           <JobsArtists>
-            <Link to="/" isOpen={isOpen} className={isOpen ? "linkOpen" : ""}>Jobs</Link>
+            <Link to="/">
+              Jobs
+            </Link>
             <Link to="/">Artists</Link>
           </JobsArtists>
-          {login ? (
+          {isLogin ? (
             <Wrapper>
-              <UserActionBlock>
-                <Avatar src={avatar} alt={user.name} />
+              <UserActionBlock onClick={handleUserActionClick}>
+                <Avatar src={avatar} />
                 <UserInfo>
                   <UserName>{user.name}</UserName>
                   <UserMail>{user.email}</UserMail>
                 </UserInfo>
                 <Arrow name="arrowDown"></Arrow>
               </UserActionBlock>
+              {isDropDawnOpen && (
+                <UserDropDawn>
+                  <Button onClick={handleLogout} variant="subtle">
+                    Sing out
+                  </Button>
+                </UserDropDawn>
+              )}
             </Wrapper>
           ) : (
             <UserActions>
-              <Button
-                onClick={handleLogin}
-                variant="subtle"
-                size={isOpen ? "big" : "standart"}
-              >
+              <Button onClick={handleLogin} variant="subtle">
                 Login
               </Button>
-              <Button onClick={handleLogin} size={isOpen ? "big" : "standart"}>
-                Sign up
-              </Button>
+              <Button onClick={handleLogin}>Sign up</Button>
             </UserActions>
           )}
         </StyledNav>
@@ -105,5 +124,5 @@ export const Navigation = () => {
 };
 
 Navigation.propTypes = {
+  // isLoggedIn: PropTypes.bool,
 };
-
