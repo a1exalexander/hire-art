@@ -11,6 +11,7 @@ export const StyledUserDropDawn = styled.div`
   padding-top: 6px;
   z-index: 110;
   margin-top: 8px;
+  box-shadow: 0px 19px 49px -23px rgba(211, 211, 211, 1);
   @media (max-width: 768px) {
     width: 100%;
     min-height: 100vh;
@@ -46,6 +47,10 @@ export const StyledUl = styled.ul`
       font-size: 20px;
       padding: 20px 12px;
     }
+  }
+  // ? как переназначить стили?
+  li > button > svg {
+    transform: rotate(270deg);
   }
   @media (max-width: 768px) {
     min-height: 100vh;

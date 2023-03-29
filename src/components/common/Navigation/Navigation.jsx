@@ -82,7 +82,7 @@ export const Navigation = () => {
     document.addEventListener("mousedown", handler);
     return () => {
       document.removeEventListener("mousedown", handler);
-    }
+    };
   });
 
   return (
@@ -98,9 +98,7 @@ export const Navigation = () => {
             <Logo name="logoHeader"></Logo>
           </LogoContainerMob>
           <JobsArtists>
-            <Link to="/">
-              Jobs
-            </Link>
+            <Link to="/">Jobs</Link>
             <Link to="/">Artists</Link>
           </JobsArtists>
           {isLogin ? (
@@ -115,7 +113,12 @@ export const Navigation = () => {
               </UserActionBlock>
               {isDropDawnOpen && (
                 <UserDropDawn>
-                  <Button onClick={handleLogout} variant="subtle">
+                  <Button
+                    icon="singOut"
+                    iconPosition="right"
+                    onClick={handleLogout}
+                    variant="subtle"
+                  >
                     Sing out
                   </Button>
                 </UserDropDawn>
