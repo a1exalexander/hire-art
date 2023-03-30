@@ -117,6 +117,7 @@ export const JobsArtists = styled.div`
   }
 `;
 
+
 export const Wrapper = styled.div`
   position: absolute;
   right: 16px;
@@ -174,7 +175,7 @@ export const Arrow = styled(Icon)`
   cursor: pointer;
   width: 18px;
   height: 18px;
-  transition: all 0.1s ease 0s;
+  transition: all 0.3s ease 0s;
 `;
 
 export const Avatar = styled.img`
@@ -183,7 +184,6 @@ export const Avatar = styled.img`
   display: flex;
   align-items: center;
   justify-content: center;
-  transition: all 0.1s ease 0s;
 `;
 
 export const UserActionBlock = styled.div`
@@ -191,16 +191,15 @@ export const UserActionBlock = styled.div`
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  transition: box-shadow 0.3s ease 0s;
   ${props => props.isDropDawnOpen && css`
+    ${Avatar} {
+      border-radius: 50%;
+      box-shadow: 0 0 0 2px ${props => props.theme.colors.P5};
+    }
     ${Arrow} {
-      transform: rotate(-180deg);
+      transform: rotate(180deg);
     }
   `}
-  &:hover ${Avatar} {
-    border-radius: 50%;
-    box-shadow: 0 0 0 2px ${(props) => props.theme.colors.P5};
-  }
   @media (max-width: 768px) {
     order: -1;
     position: fixed;
@@ -209,3 +208,4 @@ export const UserActionBlock = styled.div`
     z-index: 102;
   }
 `;
+

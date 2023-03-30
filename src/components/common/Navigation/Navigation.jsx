@@ -36,8 +36,14 @@ export const Navigation = () => {
   const handleLogin = () => {
     setIsLogin(true);
   };
+  // Logout
   const handleLogout = () => {
     setIsLogin(false);
+  };
+  // обработчик для нажатия кнопки Login, который сбрасывает состояние isDropDawnOpen на false, когда жмем на кнопку Login снова, компонент UserDropDawn не появляется автоматически.
+  const handleLoginClick = () => {
+    SetIsDropDawnOpen(false);
+    handleLogin();
   };
 
   //смена стилей при scroll
@@ -70,7 +76,6 @@ export const Navigation = () => {
   const handleUserActionClick = () => {
     SetIsDropDawnOpen(!isDropDawnOpen);
   };
-
 
   // click Outside
   const dropDawnRef = useRef(null);
@@ -105,7 +110,7 @@ export const Navigation = () => {
           </JobsArtists>
           {isLogin ? (
             <Wrapper>
-              <UserActionBlock onClick={handleUserActionClick}>
+              <UserActionBlock onClick={handleUserActionClick} isDropDawnOpen={isDropDawnOpen}>
                 <Avatar src={avatar} />
                 <UserInfo>
                   <UserName>{user.name}</UserName>
@@ -114,7 +119,7 @@ export const Navigation = () => {
                 <Arrow name="arrowDown"></Arrow>
               </UserActionBlock>
               {isDropDawnOpen && (
-                <UserDropDawn>
+                <UserDropDawn >
                   <Button
                     icon="singOut"
                     iconPosition="right"
@@ -128,10 +133,10 @@ export const Navigation = () => {
             </Wrapper>
           ) : (
             <UserActions>
-              <Button onClick={handleLogin} variant="subtle">
+              <Button onClick={handleLoginClick} variant="subtle">
                 Login
               </Button>
-              <Button onClick={handleLogin}>Sign up</Button>
+              <Button onClick={handleLoginClick}>Sign up</Button>
             </UserActions>
           )}
         </StyledNav>
