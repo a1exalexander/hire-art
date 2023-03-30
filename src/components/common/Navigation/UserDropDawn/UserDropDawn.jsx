@@ -1,6 +1,7 @@
 import PropTypes from "prop-types";
 import { Link } from "../../Link";
 import { StyledUserDropDawn, StyledUl } from "./UserDropDawn.styled";
+import { Button } from '../../Button/Button';
 
 export const UserDropDawn = ({ isDropDawn, children }) => {
     return (
@@ -25,6 +26,7 @@ export const UserDropDawn = ({ isDropDawn, children }) => {
                     <li>
                         <Link to="#">Settings</Link>
                     </li>
+
                     <li>
                         {children}
                     </li>
