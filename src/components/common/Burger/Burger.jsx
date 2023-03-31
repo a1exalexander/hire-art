@@ -3,17 +3,16 @@ import { StyledBurger } from './Burger.styled'
 
 export const Burger = ({ onClick, isOpen }) => {
 
-    return (
-        <StyledBurger isOpen={isOpen} onClick={onClick}>
-            <span />
-            <span />
-            <span />
-        </StyledBurger >
-    )
+  return (
+    <StyledBurger isOpen={isOpen} onClick={onClick}>
+      <span />
+      <span />
+      <span />
+    </StyledBurger >
+  )
 }
 
 Burger.propTypes = {
-    isOpen: PropTypes.bool.isRequired,
-    onClick: PropTypes.func.isRequired,
+  isOpen: PropTypes.bool.isRequired,
+  onClick: PropTypes.func.isRequired,
 }
-

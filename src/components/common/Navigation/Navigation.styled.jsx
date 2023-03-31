@@ -154,21 +154,17 @@ export const UserInfo = styled.div`
 export const UserName = styled.p`
   font-weight: 400;
   font-size: 16px;
-  ${(props) => {
-    return css`
-      color: ${props.theme.colors.N10};
-    `;
-  }}
+  ${props => css`
+    color: ${props.theme.colors.N10};
+  `}
 `;
 
 export const UserMail = styled.p`
   font-weight: 400;
   font-size: 11px;
-  ${(props) => {
-    return css`
-      color: ${props.theme.colors.N8};
-    `;
-  }}
+  ${props => css`
+    color: ${props.theme.colors.N8};
+  `}
 `;
 
 export const Arrow = styled(Icon)`

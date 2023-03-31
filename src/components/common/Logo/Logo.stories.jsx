@@ -1,4 +1,3 @@
-
 import { Logo } from './Logo';
 
 export default {
@@ -6,22 +5,21 @@ export default {
   component: Logo,
 };
 
-const Template = (args) => <Logo {...args} />;
-const TemplateDark = (args) => (
-  <div style={{ backgroundColor: '#07063D', padding: '32px' }}>
-    <Logo {...args} />
-  </div>
-)
-
-export const LogoComponent = ({ variant, ...args }) => {
-  if (variant === 'header') {
-    return <Template {...args} />;
-  } else {
-    return <TemplateDark {...args} />;
-  }
+function Template(args) {
+  const { variant } = args;
+  const darkStyle = { backgroundColor: '#07063D', padding: '32px' };
+  return (
+    <div style={variant === 'footer' ? darkStyle : null}>
+      <Logo {...args} />
+    </div>
+  );
 }
 
-export const Footer = TemplateDark.bind({});
+export function LogoComponent(args) {
+  return <Template {...args} />;
+}
+
+export const Footer = Template.bind({});
 Footer.args = {
   variant: 'footer',
 };

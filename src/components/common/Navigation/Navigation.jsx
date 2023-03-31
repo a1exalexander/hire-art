@@ -1,5 +1,4 @@
-import PropTypes from "prop-types";
-import { Button } from "../Button/Button";
+import { Button } from '../Button/Button';
 import {
   Arrow,
   UserActionBlock,
@@ -144,7 +143,7 @@ export const Navigation = () => {
       <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
     </Container>
   );
-};
+}
 
 Navigation.propTypes = {
   // isLoggedIn: PropTypes.bool,

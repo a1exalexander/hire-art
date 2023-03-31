@@ -5,7 +5,9 @@ export default {
   component: FAQ,
 };
 
-const Template = (args) => <FAQ {...args} />;
+function Template(args) {
+  return <FAQ {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {
