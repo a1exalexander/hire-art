@@ -1,11 +1,13 @@
-import { Comment } from "./Comment";
+import { Comment } from './Comment';
 
 export default {
-  title: "Website/components/Comment",
+  title: 'Website/components/Comment',
   component: Comment,
 };
 
-const Template = (args) => <Comment {...args} />;
+function Template(args) {
+  return <Comment {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {};

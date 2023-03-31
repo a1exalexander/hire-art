@@ -1,13 +1,16 @@
 import { Logo } from '../../../common/Logo';
-import { Policy, Section, LinkPolicy, SectionWrapper } from './Footer.styled';
+import {
+ Policy, Section, LinkPolicy, SectionWrapper 
+} from './Footer.styled';
 import { SocialButton } from '../../../common/SocialButton';
 import { Container } from '../../../common/Container';
-export const Footer = () => {
+
+export function Footer() {
   return (
     <SectionWrapper>
       <Container>
         <Section>
-          <Logo variant="footer"></Logo>
+          <Logo variant="footer" />
           <Policy className="policy">
             <LinkPolicy href="/" alt="cookie">
               Cookie policy
@@ -20,14 +23,14 @@ export const Footer = () => {
             </LinkPolicy>
           </Policy>
           <div>
-            <SocialButton name="gmail"></SocialButton>
-            <SocialButton name="facebook"></SocialButton>
-            <SocialButton name="insta"></SocialButton>
-            <SocialButton name="linkedin"></SocialButton>
-            <SocialButton name="telegram"></SocialButton>
+            <SocialButton name="gmail" />
+            <SocialButton name="facebook" />
+            <SocialButton name="insta" />
+            <SocialButton name="linkedin" />
+            <SocialButton name="telegram" />
           </div>
         </Section>
       </Container>
     </SectionWrapper>
   );
-};
+}

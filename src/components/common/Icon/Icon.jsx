@@ -1,4 +1,5 @@
-import PropTypes, { string } from 'prop-types';
+/* eslint-disable react/jsx-props-no-spreading */
+import PropTypes from 'prop-types';
 
 export const ICON_TYPES = {
   filter: 'filter',
@@ -11,7 +12,7 @@ export const ICON_TYPES = {
   pen: 'pen',
 };
 
-export const Icon = ({ className, name, size, color }) => {
+export function Icon({ className, name, size, color }) {
   const props = {
     className,
   };
@@ -170,7 +171,7 @@ export const Icon = ({ className, name, size, color }) => {
     default:
       return null;
   }
-};
+}
 
 Icon.propTypes = {
   className: PropTypes.string,

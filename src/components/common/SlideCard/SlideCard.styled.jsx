@@ -1,6 +1,6 @@
-import styled, { css } from "styled-components";
-import PropTypes from "prop-types";
-import { light } from "../../../styles/theme";
+import styled from 'styled-components';
+import PropTypes from 'prop-types';
+import { light } from '../../../styles/theme';
 
 export const StyledSlideCard = styled.div`
   max-width: 440px;

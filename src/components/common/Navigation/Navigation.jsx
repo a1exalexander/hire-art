@@ -1,4 +1,5 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 import { Button } from '../Button/Button';
 import {
   Arrow,
@@ -13,11 +14,10 @@ import {
   Wrapper,
 } from './Navigation.styled';
 import avatar from '../../../assets/image/user_avatar.png';
-import { useState } from 'react';
 import { Burger } from '../Burger/Burger';
 import { Container } from '../Container';
 
-export const Navigation = ({ name, email }) => {
+export function Navigation({ name, email }) {
   const [login, setLogin] = useState(false);
 
   //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) 'login' заменить isLoggedIn ?
@@ -59,7 +59,7 @@ export const Navigation = ({ name, email }) => {
                 <UserName>{name}</UserName>
                 <UserMail>{email}</UserMail>
               </UserInfo>
-              <Arrow name="arrowDown"></Arrow>
+              <Arrow name="arrowDown" />
             </UserActionBlock>
           </Wrapper>
         ) : (
@@ -77,17 +77,12 @@ export const Navigation = ({ name, email }) => {
           </UserActions>
         )}
       </StyledContainer>
-      <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
+      <Burger onClick={handleBurgerClick} isOpen={isOpen} />
     </Container>
   );
-};
+}
 
 Navigation.propTypes = {
   name: PropTypes.string.isRequired,
   email: PropTypes.string.isRequired,
-};
-
-Navigation.defaultProps = {
-  name: 'Jennifer C.',
-  email: 'jennifer015@gmail.com',
 };

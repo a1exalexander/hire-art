@@ -1,7 +1,9 @@
 import { Container } from '../../../common/Container';
-import { Section, Quote, Highlight, Quoter } from './Comment.styled';
+import {
+ Section, Quote, Highlight, Quoter 
+} from './Comment.styled';
 
-export const Comment = () => {
+export function Comment() {
   return (
     <Section>
       <Container>
@@ -13,4 +15,4 @@ export const Comment = () => {
       </Container>
     </Section>
   );
-};
+}

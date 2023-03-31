@@ -5,7 +5,9 @@ export default {
   component: Link,
 };
 
-const Template = (args) => <Link {...args} />;
+function Template(args) {
+  return <Link {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {

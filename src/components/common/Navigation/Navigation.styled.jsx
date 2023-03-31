@@ -1,6 +1,5 @@
 import styled, { css } from 'styled-components';
 import { Icon } from '../Icon';
-import { light } from '../../../styles/theme';
 
 export const StyledContainer = styled.div`
   width: 100%;
@@ -24,11 +23,9 @@ export const StyledContainer = styled.div`
     width: 100%;
     padding-top: ${({ login }) => (login ? '80px' : '60px')};
     padding-bottom: 30px;
-    ${(props) => {
-      return css`
-        background: ${props.theme.colors.white};
-      `;
-    }}
+    ${props => css`
+      background: ${props.theme.colors.white};
+    `}
   }
 `;
 
@@ -73,11 +70,9 @@ export const Wrapper = styled.div`
       width: 100%;
       position: absolute;
       z-index: -1;
-      ${(props) => {
-        return css`
-          background-color: ${props.theme.colors.Purple1};
-        `;
-      }}
+      ${props => css`
+        background-color: ${props.theme.colors.Purple1};
+      `}
     }
   }
 `;
@@ -104,21 +99,17 @@ export const UserInfo = styled.div`
 export const UserName = styled.p`
   font-weight: 400;
   font-size: 16px;
-  ${(props) => {
-    return css`
-      color: ${props.theme.colors.N10};
-    `;
-  }}
+  ${props => css`
+    color: ${props.theme.colors.N10};
+  `}
 `;
 
 export const UserMail = styled.p`
   font-weight: 400;
   font-size: 11px;
-  ${(props) => {
-    return css`
-      color: ${props.theme.colors.N8};
-    `;
-  }}
+  ${props => css`
+    color: ${props.theme.colors.N8};
+  `}
 `;
 
 export const Arrow = styled(Icon)`

@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { StyledButton, StyledIcon, StyledText } from './Button.styled';
 
-export const Button = ({
+export function Button({
   children,
   icon,
   variant,
@@ -9,7 +9,7 @@ export const Button = ({
   size,
   onClick,
   iconPosition,
-}) => {
+}) {
   return (
     <StyledButton
       disabled={isDisabled}
@@ -21,7 +21,7 @@ export const Button = ({
       <StyledText>{children}</StyledText>
     </StyledButton>
   );
-};
+}
 
 Button.propTypes = {
   ...StyledButton.propTypes,

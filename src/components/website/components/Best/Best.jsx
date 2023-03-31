@@ -5,20 +5,20 @@ import {
   BestCard,
   BestTitle,
   BestText,
-} from './Best.styled.jsx';
-import img_1 from '../../../../assets/svg/best/img_1.svg';
-import img_2 from '../../../../assets/svg/best/img_2.svg';
-import img_3 from '../../../../assets/svg/best/img_3.svg';
-import { Container } from '../../../common/Container/Container.jsx';
+} from './Best.styled';
+import img1 from '../../../../assets/svg/best/img_1.svg';
+import img2 from '../../../../assets/svg/best/img_2.svg';
+import img3 from '../../../../assets/svg/best/img_3.svg';
+import { Container } from '../../../common/Container/Container';
 
-export const Best = () => {
+export function Best() {
   return (
     <Container>
       <Wrapper>
         <SectionTitle>Why We Are The Best</SectionTitle>
         <Section>
           <BestCard>
-            <img src={img_1}></img>
+            <img src={img1} alt="Clear Salary Policy" />
             <BestTitle>Clear Salary Policy</BestTitle>
             <BestText>
               Lorem ipsum dolor sit amet consectetur. Fringilla mauris
@@ -27,7 +27,7 @@ export const Best = () => {
             </BestText>
           </BestCard>
           <BestCard>
-            <img src={img_2}></img>
+            <img src={img2} alt="Created by Team of Pros" />
             <BestTitle>Created by Team of Pros</BestTitle>
             <BestText>
               Experience top-notch quality with our service crafted by
@@ -36,7 +36,7 @@ export const Best = () => {
             </BestText>
           </BestCard>
           <BestCard>
-            <img src={img_3}></img>
+            <img src={img3} alt="Strong Network" />
             <BestTitle>Strong Network</BestTitle>
             <BestText>
               We built a strong network inside and out of cretive industry
@@ -48,4 +48,4 @@ export const Best = () => {
       </Wrapper>
     </Container>
   );
-};
+}

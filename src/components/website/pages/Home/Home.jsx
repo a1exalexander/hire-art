@@ -8,7 +8,7 @@ import { Hero } from '../../components/Hero';
 import { Market } from '../../components/Market';
 import { Services } from '../../components/Services';
 
-export const Home = () => {
+export function Home() {
   return (
     <>
       <Navigation />
@@ -22,4 +22,4 @@ export const Home = () => {
       <Footer />
     </>
   );
-};
+}

@@ -1,13 +1,15 @@
-import { CustomersSay } from "./CustomersSay";
+import { CustomersSay } from './CustomersSay';
 
 export default {
-  title: "website/components/CustomersSay",
+  title: 'website/components/CustomersSay',
   component: CustomersSay,
 };
 
-const Template = (args) => <CustomersSay {...args} />;
+function Template(args) {
+  return <CustomersSay {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {
-  title: "What Our Customers Say",
+  title: 'What Our Customers Say',
 };

@@ -44,7 +44,7 @@ const accordionData = [
   },
 ];
 
-export const FAQ = ({ title, children, link }) => {
+export function FAQ({ title, children, link }) {
   return (
     <AccordionSection>
       <Container>
@@ -57,23 +57,17 @@ export const FAQ = ({ title, children, link }) => {
           <StyledIcon name={ICON_TYPES.pen} />
         </AccordionInfo>
         <AccordionGroup>
-          {accordionData.map(({ title, content }) => (
-            <Accardion title={title} content={content} />
+          {accordionData.map(item => (
+            <Accardion title={item.title} content={item.content} />
           ))}
         </AccordionGroup>
       </Container>
     </AccordionSection>
   );
-};
+}
 
 FAQ.propTypes = {
   title: PropTypes.string.isRequired,
   children: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
-};
-
-FAQ.defaultProps = {
-  title: 'Frequently Asked Questions',
-  children: 'Don`t see your question? email ',
-  link: 'help@hireart.com',
 };
