@@ -17,7 +17,7 @@ import {
 import avatar from "../../../assets/image/user_avatar.png";
 import { Burger } from "../Burger/Burger";
 import { Container } from "../Container";
-import { Logo } from "../Logo/Logo";
+import { Logo } from "../Logo";
 import { Link } from "../Link";
 import { useRef, useEffect, useState } from "react";
 import { UserDropDawn } from "./UserDropDawn/UserDropDawn";

@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 
 
 export function Logo({ variant }) {
+
   return (
     <>
       {variant === 'header' && (

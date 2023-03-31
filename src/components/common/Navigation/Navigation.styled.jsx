@@ -2,7 +2,7 @@ import styled, { css } from "styled-components";
 import { Icon } from "../Icon";
 
 export const FixedContainer = styled.div`
-  width: 100%;
+ width: 100%;
   padding: 23px 0px;
   background-color: ${(props) => props.theme.colors.white};
   position: fixed;

@@ -2,8 +2,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation } from 'swiper';
 import PropTypes from 'prop-types';
 import { SlideCard } from '../SlideCard/SlideCard';
-import './Slider.css';
 import 'swiper/swiper.min.css';
+import './Slider.css';
 
 function Arrow({ className }) {
   return (
@@ -29,16 +29,19 @@ export function Slider({ slides }) {
   return (
     <>
       <Swiper
-        slidesPerView
+        slidesPerView={3}
+        spaceBetween={48}
+        initialSlide={0}
+        loopedSlides={3}
+        loop
         navigation={{
           prevEl: '.swiper-button-prev',
           nextEl: '.swiper-button-next',
-          clickable: true,
         }}
         modules={[Navigation]}
       >
-        {slides.map(slide => (
-          <SwiperSlide className="swiper-slide" key={slide.id}>
+        {slides.map((slide) => (
+          <SwiperSlide key={slide.id}>
             <SlideCard
               name={slide.name}
               title={slide.title}
@@ -62,16 +65,18 @@ export function Slider({ slides }) {
 }
 
 Slider.propTypes = {
-  slides: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number.isRequired,
-    name: PropTypes.string.isRequired,
-    title: PropTypes.string.isRequired,
-    desc: PropTypes.string.isRequired,
-    pos: PropTypes.string.isRequired,
-    img: PropTypes.string.isRequired,
-  })),
+  slides: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+      pos: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+    }),
+  ),
 };
 
 Slider.defaultProps = {
   slides: [],
-}
+};
