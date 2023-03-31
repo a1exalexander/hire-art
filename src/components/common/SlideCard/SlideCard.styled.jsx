@@ -1,5 +1,4 @@
 import styled from 'styled-components';
-import PropTypes from 'prop-types';
 import { light } from '../../../styles/theme';
 
 export const StyledSlideCard = styled.div`
@@ -54,19 +53,3 @@ export const Inner = styled.div`
   display: flex;
   flex-direction: column;
 `;
-
-Title.propTypes = {
-  title: PropTypes.string.isRequired,
-};
-Description.propTypes = {
-  desc: PropTypes.string.isRequired,
-};
-Name.propTypes = {
-  name: PropTypes.string.isRequired,
-};
-Position.propTypes = {
-  pos: PropTypes.string.isRequired,
-};
-Img.propTypes = {
-  img: PropTypes.string.isRequired,
-};

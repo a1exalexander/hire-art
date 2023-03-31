@@ -7,5 +7,5 @@ export function SocialButton({ name, fill }) {
 
 SocialButton.propTypes = {
   name: PropTypes.string.isRequired,
-  fill: PropTypes.string.isRequired,
+  fill: PropTypes.string,
 };

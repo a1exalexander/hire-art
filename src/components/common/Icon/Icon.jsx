@@ -176,6 +176,6 @@ export function Icon({ className, name, size, color }) {
 Icon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.oneOf(Object.values(ICON_TYPES)).isRequired,
-  size: PropTypes.number,
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   color: PropTypes.string,
 };

@@ -83,6 +83,6 @@ export function Navigation({ name, email }) {
 }
 
 Navigation.propTypes = {
-  name: PropTypes.string.isRequired,
-  email: PropTypes.string.isRequired,
+  name: PropTypes.string,
+  email: PropTypes.string,
 };
