@@ -1,23 +1,23 @@
-import styled, { css } from 'styled-components';
+import styled from 'styled-components';
 
 export const StyledAccordion = styled.div`
-    max-width: 770px;
+    max-width: 344px;
     width: 100%;
-    height: 100%
-    min-height: 139px;
-    background: #FFFFFF;
-    border: 1px solid #C2CADF;
+    min-heigh: 154px;
+    height: 100%;
+    background-color: ${(props) => props.theme.colors.white};
+    border: 1px solid ${(props) => props.theme.colors.N4};
     border-radius: 6px;
-    padding: 32px;
+    padding: 16px;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
     align-items: flex-start;
     gap: 4px;
-    @media screen and (max-width: 768px) {
-        max-width: 343px;
-        min-heigh: 154px;
-        padding: 16px;
+    @media screen and (min-width: 768px) {
+        max-width: 770px;
+        min-height: 84px;
+        padding: 32px;
     }
 `;
 
@@ -29,16 +29,14 @@ export const AccordionTitleWrapper = styled.div`
 `;
 
 export const AccordionTitle = styled.div`
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    align-self: flex-start;
     font-weight: 500;
-    font-size: 20px;
-    line-height: 150%;
-    color: #0F1723;
-    @media screen and (max-width: 768px) {
-        font-size: 18px;
-        line-height: 167%;
+    font-size: 18px;
+    line-height: 167%;
+    color: ${(props) => props.theme.colors.N10};
+    @media screen and (mix-width: 768px) {
+        font-size: 20px;
+        line-height: 150%;
     }
 `;
 
@@ -57,5 +55,5 @@ export const AccordionContent = styled.div`
     font-weight: 400;
     font-size: 14px;
     line-height: 160%;
-    color: #0F1723;
+    color: ${(props) => props.theme.colors.N10};
 `;

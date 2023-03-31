@@ -53,7 +53,7 @@ export const StyledNav = styled.div`
     flex-direction: column;
     min-height: 100vh;
     transform: ${({ isOpen }) =>
-    isOpen ? "translateX(0)" : "translateX(-100vw)"};
+    isOpen ? 'translateX(0)' : 'translateX(-100vw)'};
     position: absolute;
     display: flex;
     align-items: flex-start;
@@ -129,7 +129,7 @@ export const Wrapper = styled.div`
     right: 0;
     left: 0;
     &::before {
-      content: "";
+      content: '';
       display: block;
       height: 100%;
       width: 100%;
