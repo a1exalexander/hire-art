@@ -15,7 +15,7 @@ export const StyledContainer = styled.div`
       theme: {
         offset: { maxWidth, pxDesktop },
       },
-    }) => `calc(${maxWidth}px + ${pxDesktop} * 2)`};
+    }) => `calc(${maxWidth} + ${pxDesktop} * 2)`};
     padding-left: ${(props) => props.theme.offset.pxDesktop};
     padding-right: ${(props) => props.theme.offset.pxDesktop};
   }
