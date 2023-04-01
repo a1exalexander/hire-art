@@ -1,15 +1,15 @@
-import PropTypes from "prop-types";
-import { StyledSocIcon } from "./SocialIcons.styled";
+import PropTypes from 'prop-types';
+import { StyledSocIcon } from './SocialIcons.styled';
 
 export const SOCIAL_ICON_TYPES = {
-  gmail: "gmail",
-  facebook: "facebook",
-  insta: "insta",
-  linkedin: "linkedin",
-  telegram: "telegram",
+  gmail: 'gmail',
+  facebook: 'facebook',
+  insta: 'insta',
+  linkedin: 'linkedin',
+  telegram: 'telegram',
 };
 
-export const SociaIcons = ({ className, name, color, size }) => {
+export function SociaIcons({ className, name, color, size }) {
   const props = {
     className,
   };
@@ -40,7 +40,11 @@ export const SociaIcons = ({ className, name, color, size }) => {
     case SOCIAL_ICON_TYPES.facebook:
       return (
         <StyledSocIcon>
-          <svg {...props} viewBox="0 0 27 27" xmlns="http://www.w3.org/2000/svg">
+          <svg
+            {...props}
+            viewBox="0 0 27 27"
+            xmlns="http://www.w3.org/2000/svg"
+          >
             <path
               fillRule="evenodd"
               clipRule="evenodd"
@@ -105,13 +109,12 @@ export const SociaIcons = ({ className, name, color, size }) => {
     default:
       return null;
   }
-};
+}
 
 SociaIcons.propTypes = {
   name: PropTypes.oneOf(Object.values(SOCIAL_ICON_TYPES)).isRequired,
   fill: PropTypes.string,
   size: PropTypes.number,
+  className: PropTypes.string,
+  color: PropTypes.string,
 };
-
-
-

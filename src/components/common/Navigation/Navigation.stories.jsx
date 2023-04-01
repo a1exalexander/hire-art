@@ -5,15 +5,12 @@ export default {
   component: Navigation,
 };
 
-const Template = (args) => <Navigation {...args} />;
+function Template(args) {
+  return <Navigation {...args} />;
+}
 
 export const ClickOnLoginBtn = Template.bind({});
 ClickOnLoginBtn.args = {
+  name: 'name',
+  email: 'email@email.email',
 };
-
-
-
-
-
-
-

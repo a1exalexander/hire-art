@@ -1,10 +1,10 @@
 import PropTypes from 'prop-types';
-import { StyledContainer } from './Container.styled.jsx';
+import { StyledContainer } from './Container.styled';
 
-export const Container = ({ children }) => {
+export function Container({ children }) {
   return <StyledContainer>{children}</StyledContainer>;
-};
+}
 
-Container.ptopTypes = {
+Container.propTypes = {
   children: PropTypes.node.isRequired,
 };

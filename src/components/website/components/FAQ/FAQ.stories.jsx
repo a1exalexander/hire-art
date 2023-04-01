@@ -5,11 +5,13 @@ export default {
   component: FAQ,
 };
 
-const Template = (args) => <FAQ {...args} />;
+function Template(args) {
+  return <FAQ {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {
   title: 'Frequently Asked Questions',
-  children: 'Don`t see your question? email ',
+  description: 'Don`t see your question? email ',
   link: 'help@hireart.com',
 };

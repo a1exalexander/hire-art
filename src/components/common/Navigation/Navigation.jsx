@@ -1,5 +1,11 @@
+<<<<<<< HEAD
 import PropTypes from "prop-types";
 import { Button } from "../Button/Button";
+=======
+import PropTypes from 'prop-types';
+import { useState } from 'react';
+import { Button } from '../Button/Button';
+>>>>>>> c013c29b6dba81e1af431a478aaf74d9259decf7
 import {
   Arrow,
   UserActionBlock,
@@ -10,6 +16,7 @@ import {
   UserActions,
   JobsArtists,
   Wrapper,
+<<<<<<< HEAD
   FixedContainer,
   StyledNav,
   LogoContainer,
@@ -28,6 +35,15 @@ export const Navigation = () => {
     name: "Jennifer C.",
     email: "jennifer015@gmail.com",
   };
+=======
+} from './Navigation.styled';
+import avatar from '../../../assets/image/user_avatar.png';
+import { Burger } from '../Burger/Burger';
+import { Container } from '../Container';
+
+export function Navigation({ name, email }) {
+  const [login, setLogin] = useState(false);
+>>>>>>> c013c29b6dba81e1af431a478aaf74d9259decf7
 
   //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) заменить isLoggedIn ?
 
@@ -94,6 +110,7 @@ export const Navigation = () => {
 
   return (
     <Container>
+<<<<<<< HEAD
       <FixedContainer ref={headerRef}>
         {isLogin ? null : (
           <LogoContainer>
@@ -142,10 +159,62 @@ export const Navigation = () => {
         </StyledNav>
       </FixedContainer>
       <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
+=======
+      <StyledContainer login={login} isOpen={isOpen}>
+        <JobsArtists>
+          <Button
+            onClick={() => {}}
+            variant="subtle"
+            size={isOpen ? 'big' : 'standart'}
+          >
+            Jobs
+          </Button>
+          <Button
+            onClick={() => {}}
+            variant="subtle"
+            size={isOpen ? 'big' : 'standart'}
+          >
+            Artists
+          </Button>
+        </JobsArtists>
+
+        {login ? (
+          <Wrapper>
+            <UserActionBlock>
+              <Avatar src={avatar} alt={name} />
+              <UserInfo>
+                <UserName>{name}</UserName>
+                <UserMail>{email}</UserMail>
+              </UserInfo>
+              <Arrow name="arrowDown" />
+            </UserActionBlock>
+          </Wrapper>
+        ) : (
+          <UserActions>
+            <Button
+              onClick={handleLogin}
+              variant="subtle"
+              size={isOpen ? 'big' : 'standart'}
+            >
+              Login
+            </Button>
+            <Button onClick={handleLogin} size={isOpen ? 'big' : 'standart'}>
+              Sign up
+            </Button>
+          </UserActions>
+        )}
+      </StyledContainer>
+      <Burger onClick={handleBurgerClick} isOpen={isOpen} />
+>>>>>>> c013c29b6dba81e1af431a478aaf74d9259decf7
     </Container>
   );
-};
+}
 
 Navigation.propTypes = {
+<<<<<<< HEAD
   // isLoggedIn: PropTypes.bool,
+=======
+  name: PropTypes.string,
+  email: PropTypes.string,
+>>>>>>> c013c29b6dba81e1af431a478aaf74d9259decf7
 };

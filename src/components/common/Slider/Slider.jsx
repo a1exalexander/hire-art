@@ -1,11 +1,11 @@
-import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper";
-import "swiper/css";
-import { SlideCard } from "../SlideCard/SlideCard";
-import "./Slider.css";
-import PropTypes from "prop-types";
+import { Swiper, SwiperSlide } from 'swiper/react';
+import { Navigation } from 'swiper';
+import PropTypes from 'prop-types';
+import { SlideCard } from '../SlideCard/SlideCard';
+import 'swiper/swiper.min.css';
+import './Slider.css';
 
-const Arrow = ({ className }) => {
+function Arrow({ className }) {
   return (
     <svg
       className={className}
@@ -19,22 +19,29 @@ const Arrow = ({ className }) => {
       />
     </svg>
   );
+}
+
+Arrow.propTypes = {
+  className: PropTypes.string,
 };
 
-export const Slider = ({ slides = [] }) => {
+export function Slider({ slides }) {
   return (
     <>
       <Swiper
-        slidesPerView={true}
+        slidesPerView={3}
+        spaceBetween={48}
+        initialSlide={0}
+        loopedSlides={3}
+        loop
         navigation={{
-          prevEl: ".swiper-button-prev",
-          nextEl: ".swiper-button-next",
-          clickable: true,
+          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next',
         }}
         modules={[Navigation]}
       >
         {slides.map((slide) => (
-          <SwiperSlide className="swiper-slide" key={slide.id}>
+          <SwiperSlide key={slide.id}>
             <SlideCard
               name={slide.name}
               title={slide.title}
@@ -55,8 +62,21 @@ export const Slider = ({ slides = [] }) => {
       </div>
     </>
   );
-};
+}
 
 Slider.propTypes = {
-  slides: PropTypes.array.isRequired,
+  slides: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.number.isRequired,
+      name: PropTypes.string.isRequired,
+      title: PropTypes.string.isRequired,
+      desc: PropTypes.string.isRequired,
+      pos: PropTypes.string.isRequired,
+      img: PropTypes.string.isRequired,
+    }),
+  ),
+};
+
+Slider.defaultProps = {
+  slides: [],
 };
