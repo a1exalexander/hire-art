@@ -1,10 +1,10 @@
-import styled, { css } from "styled-components";
-import { Icon } from "../Icon";
+import styled, { css } from 'styled-components';
+import { Icon } from '../Icon';
 
 export const FixedContainer = styled.div`
- width: 100%;
+  width: 100%;
   padding: 23px 0px;
-  background-color: ${(props) => props.theme.colors.white};
+  background-color: ${props => props.theme.colors.white};
   position: fixed;
   top: 0;
   right: 0;
@@ -15,7 +15,7 @@ export const FixedContainer = styled.div`
   &.scroll {
     padding: 14px 0px;
     height: 60px;
-    background-color: ${(props) => props.theme.colors.P3};
+    background-color: ${props => props.theme.colors.P3};
     border-radius: 0 0 6px 6px;
   }
   @media (max-width: 768px) {
@@ -65,13 +65,9 @@ export const StyledNav = styled.div`
     transition: transform 0.3s ease-in-out;
     z-index: 1;
     width: 100%;
-    padding-top: ${({ isLogin }) => (isLogin ? "80px" : "60px")};
+    padding-top: ${({ isLogin }) => (isLogin ? '80px' : '60px')};
     padding-bottom: 30px;
-    ${(props) => {
-    return css`
-        background: ${props.theme.colors.white};
-      `;
-  }}
+    background: ${props => props.theme.colors.white};
   }
 `;
 
@@ -83,7 +79,7 @@ export const UserActions = styled.div`
     align-self: center;
     position: fixed;
     bottom: 0;
-    background-color: ${(props) => props.theme.colors.P3};
+    background-color: ${props => props.theme.colors.P3};
     padding: 8px 16px;
     min-width: 100%;
     border-radius: 10px 10px 0 0;
@@ -106,7 +102,7 @@ export const JobsArtists = styled.div`
     gap: 24px;
     padding-top: 24px;
     width: 100%;
-    border-top: 1px solid ${(props) => props.theme.colors.N3};
+    border-top: 1px solid ${props => props.theme.colors.N3};
     a {
       font-size: 20px;
       width: 100%;
@@ -116,7 +112,6 @@ export const JobsArtists = styled.div`
     }
   }
 `;
-
 
 export const Wrapper = styled.div`
   position: absolute;
@@ -135,11 +130,7 @@ export const Wrapper = styled.div`
       width: 100%;
       position: absolute;
       z-index: 100;
-      ${(props) => {
-    return css`
-          background-color: ${props.theme.colors.Purple1};
-        `;
-  }}
+      background-color: ${(props) => props.theme.colors.Purple1};
     }
   }
 `;
@@ -187,15 +178,17 @@ export const UserActionBlock = styled.div`
   align-items: center;
   gap: 8px;
   cursor: pointer;
-  ${props => props.isDropDawnOpen && css`
-    ${Avatar} {
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px ${props => props.theme.colors.P5};
-    }
-    ${Arrow} {
-      transform: rotate(180deg);
-    }
-  `}
+  ${props =>
+    props.isDropDawnOpen &&
+    css`
+      ${Avatar} {
+        border-radius: 50%;
+        box-shadow: 0 0 0 2px ${props.theme.colors.P5};
+      }
+      ${Arrow} {
+        transform: rotate(180deg);
+      }
+    `}
   @media (max-width: 768px) {
     order: -1;
     position: fixed;
@@ -204,4 +197,3 @@ export const UserActionBlock = styled.div`
     z-index: 102;
   }
 `;
-

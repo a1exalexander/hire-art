@@ -5,7 +5,9 @@ export default {
     component: UserDropDawn,
 };
 
-const Template = (args) => <UserDropDawn {...args} />;
+function Template(args) {
+    return <UserDropDawn {...args} />
+}
 
 export const DropDawn = Template.bind({});
 DropDawn.args = {

@@ -19,13 +19,11 @@ export const AccItem = styled.div`
     min-height: 54px;
     padding: 16px;
   }
-  ${(props) => {
-    return css`
+  ${(props) => css`
       background-color: ${props.theme.colors.white};
       border: 1px solid ${props.theme.colors.N4};
       border-radius: 6px;
-    `;
-  }}
+    `}
 `;
 
 export const AccItemHeader = styled.div`
@@ -39,11 +37,9 @@ export const AccItemTitle = styled.div`
   font-weight: 500;
   font-size: 20px;
   line-height: 30px;
-  ${(props) => {
-    return css`
+  ${(props) => css`
       color: ${props.theme.colors.H14};
-    `;
-  }}
+    `}
 `;
 
 export const AccItemText = styled.div`
@@ -72,11 +68,9 @@ export const CloseButton = styled.div`
     width: 2px;
     border-radius: 4px;
     transition: all 0.3s ease 0s;
-    ${(props) => {
-    return css`
+    ${(props) => css`
         background-color: ${props.theme.colors.P4};
-      `;
-  }}
+      `}
   }
   &::before {
     transform: rotate(90deg) translateY(-1px);

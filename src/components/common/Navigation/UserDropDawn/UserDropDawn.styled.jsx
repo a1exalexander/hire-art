@@ -9,7 +9,7 @@ export const StyledUserDropDawn = styled.div`
   border-radius: 6px;
   padding-top: 6px;
   z-index: 110;
-  margin-top: 20px;
+  margin-top: 16px;
   box-shadow: 0px 19px 49px -23px rgba(211, 211, 211, 1);
   &::before {
     content: "";

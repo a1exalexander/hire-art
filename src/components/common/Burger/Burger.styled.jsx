@@ -19,26 +19,24 @@ export const StyledBurger = styled.div`
       transition: all 0.3s ease 0s;
       width: 2rem;
       height: 0.2rem;
-      ${(props) => {
-    return css`
+      ${(props) => css`
           background-color: ${({ isOpen }) =>
-        isOpen ? props.theme.colors.N4 : props.theme.colors.Purple5};
+      isOpen ? props.theme.colors.N4 : props.theme.colors.Purple5};
           border-radius: 10px;
           &:nth-child(1) {
             transform: ${({ isOpen }) =>
-        isOpen ? "rotate(45deg) translate(10px,5px)" : "rotate(0)"};
+      isOpen ? "rotate(45deg) translate(10px,5px)" : "rotate(0)"};
           }
           &:nth-child(2) {
             transform: ${({ isOpen }) =>
-        isOpen ? "translateX(100%)" : "translateX(0)"};
+      isOpen ? "translateX(100%)" : "translateX(0)"};
             opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
           }
           &:nth-child(3) {
             transform: ${({ isOpen }) =>
-        isOpen ? "rotate(-45deg) translate(9px,-4px)" : "rotate(0)"};
+      isOpen ? "rotate(-45deg) translate(9px,-4px)" : "rotate(0)"};
           }
-        `;
-  }}
+        `}
     }
   }
 `;

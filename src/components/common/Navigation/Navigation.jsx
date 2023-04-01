@@ -1,3 +1,4 @@
+import { useRef, useEffect, useState } from "react";
 import { Button } from '../Button/Button';
 import {
   Arrow,
@@ -19,16 +20,15 @@ import { Burger } from "../Burger/Burger";
 import { Container } from "../Container";
 import { Logo } from "../Logo";
 import { Link } from "../Link";
-import { useRef, useEffect, useState } from "react";
 import { UserDropDawn } from "./UserDropDawn/UserDropDawn";
 
-export const Navigation = () => {
+export function Navigation() {
   const user = {
     name: "Jennifer C.",
     email: "jennifer015@gmail.com",
   };
 
-  //* Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) заменить isLoggedIn ?
+  // Добавить проверку на логинизацию =  добавить пропс isLoggedIn(PropTypes.bool) заменить isLoggedIn ?
 
   // открывает UserActions
   const [isLogin, setIsLogin] = useState(false);
@@ -39,13 +39,9 @@ export const Navigation = () => {
   const handleLogout = () => {
     setIsLogin(false);
   };
-  // обработчик для нажатия кнопки Login, который сбрасывает состояние isDropDawnOpen на false, когда жмем на кнопку Login снова, компонент UserDropDawn не появляется автоматически.
-  const handleLoginClick = () => {
-    SetIsDropDawnOpen(false);
-    handleLogin();
-  };
 
-  //смена стилей при scroll
+
+  // смена стилей при scroll
   const headerRef = useRef(null);
   useEffect(() => {
     const scrollHeader = () => {
@@ -76,13 +72,18 @@ export const Navigation = () => {
     SetIsDropDawnOpen(!isDropDawnOpen);
   };
 
+  // обработчик для нажатия кнопки Login, который сбрасывает состояние isDropDawnOpen на false, когда жмем на кнопку Login снова, компонент UserDropDawn не появляется автоматически.
+  const handleLoginClick = () => {
+    SetIsDropDawnOpen(false);
+    handleLogin();
+  };
+
   // click Outside
   const dropDawnRef = useRef(null);
   useEffect(() => {
     const handler = (e) => {
       if (!dropDawnRef.current.contains(e.target)) {
         SetIsDropDawnOpen(false);
-        console.log(dropDawnRef.current);
       }
     };
     document.addEventListener("mousedown", handler);
@@ -96,12 +97,12 @@ export const Navigation = () => {
       <FixedContainer ref={headerRef}>
         {isLogin ? null : (
           <LogoContainer>
-            <Logo variant="header"></Logo>
+            <Logo variant="header" />
           </LogoContainer>
         )}
         <StyledNav isLogin={isLogin} isOpen={isOpen} ref={dropDawnRef}>
           <LogoContainerMob>
-            <Logo variant="header"></Logo>
+            <Logo variant="header" />
           </LogoContainerMob>
           <JobsArtists>
             <Link to="/">Jobs</Link>
@@ -115,7 +116,7 @@ export const Navigation = () => {
                   <UserName>{user.name}</UserName>
                   <UserMail>{user.email}</UserMail>
                 </UserInfo>
-                <Arrow name="arrowDown"></Arrow>
+                <Arrow name="arrowDown" />
               </UserActionBlock>
               {isDropDawnOpen && (
                 <UserDropDawn >
@@ -140,7 +141,7 @@ export const Navigation = () => {
           )}
         </StyledNav>
       </FixedContainer>
-      <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
+      <Burger onClick={handleBurgerClick} isOpen={isOpen} />
     </Container>
   );
 };

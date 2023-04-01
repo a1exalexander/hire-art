@@ -8,7 +8,7 @@ import {
   CloseButton,
 } from "./AccardionV2.styled";
 
-export const AccardionV2 = () => {
+export function AccardionV2() {
   const data = [
     {
       accTitle: "Why Hire Art?",
@@ -52,19 +52,17 @@ export const AccardionV2 = () => {
 
   return (
     <AccContainer>
-      {data.map((item, idx) => {
-        return (
-          <AccItem onClick={() => onActive(idx)}>
-            <AccItemHeader>
-              <AccItemTitle>{item.accTitle}</AccItemTitle>
-              <CloseButton onActive={accardionActive === idx}></CloseButton>
-            </AccItemHeader>
-            <AccItemText style={{ maxHeight: accardionActive === idx ? `${accardionHeight}px` : 0 }}>
-              <div id={`accText-${idx}`}>{item.accText}</div>
-            </AccItemText>
-          </AccItem>
-        );
-      })}
+      {data.map((item, idx) => (
+        <AccItem onClick={() => onActive(idx)}>
+          <AccItemHeader>
+            <AccItemTitle>{item.accTitle}</AccItemTitle>
+            <CloseButton onActive={accardionActive === idx} />
+          </AccItemHeader>
+          <AccItemText style={{ maxHeight: accardionActive === idx ? `${accardionHeight}px` : 0 }}>
+            <div id={`accText-${idx}`}>{item.accText}</div>
+          </AccItemText>
+        </AccItem>
+      ))}
     </AccContainer>
   );
 };

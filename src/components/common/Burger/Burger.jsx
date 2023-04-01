@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types'
 import { StyledBurger } from './Burger.styled'
 
-export const Burger = ({ onClick, isOpen }) => {
+export function Burger({ onClick, isOpen }) {
 
   return (
     <StyledBurger isOpen={isOpen} onClick={onClick}>
