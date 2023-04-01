@@ -44,21 +44,21 @@ const accordionData = [
   },
 ];
 
-export function FAQ({ title, children, link }) {
+export function FAQ({ title, description, link }) {
   return (
     <AccordionSection>
       <Container>
         <AccordionInfo>
           <Title>{title}</Title>
           <Subtitle>
-            {children}
+            {description}
             <Link href="mailto: help@hireart.com">{link}</Link>
           </Subtitle>
           <StyledIcon name={ICON_TYPES.pen} />
         </AccordionInfo>
         <AccordionGroup>
           {accordionData.map(item => (
-            <Accardion title={item.title} content={item.content} />
+            <Accardion key={item.title} title={item.title} content={item.content} />
           ))}
         </AccordionGroup>
       </Container>
@@ -68,6 +68,6 @@ export function FAQ({ title, children, link }) {
 
 FAQ.propTypes = {
   title: PropTypes.string.isRequired,
-  children: PropTypes.string.isRequired,
+  description: PropTypes.string.isRequired,
   link: PropTypes.string.isRequired,
 };

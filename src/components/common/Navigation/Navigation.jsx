@@ -96,12 +96,12 @@ export const Navigation = () => {
       <FixedContainer ref={headerRef}>
         {isLogin ? null : (
           <LogoContainer>
-            <Logo name="logoHeader"></Logo>
+            <Logo variant="header"></Logo>
           </LogoContainer>
         )}
         <StyledNav isLogin={isLogin} isOpen={isOpen} ref={dropDawnRef}>
           <LogoContainerMob>
-            <Logo name="logoHeader"></Logo>
+            <Logo variant="header"></Logo>
           </LogoContainerMob>
           <JobsArtists>
             <Link to="/">Jobs</Link>
@@ -143,7 +143,7 @@ export const Navigation = () => {
       <Burger onClick={handleBurgerClick} isOpen={isOpen}></Burger>
     </Container>
   );
-}
+};
 
 Navigation.propTypes = {
   // isLoggedIn: PropTypes.bool,

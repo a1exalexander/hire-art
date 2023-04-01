@@ -17,8 +17,12 @@ export function Home() {
       <Comment />
       <Best />
       <Market />
-      <CustomersSay />
-      <FAQ />
+      <CustomersSay title="What Our Customers Say" />
+      <FAQ
+        title="Frequently asked questions"
+        description="Don't see your question? Email "
+        link="help@hireart.com"
+      />
       <Footer />
     </>
   );
