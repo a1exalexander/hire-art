@@ -24,3 +24,7 @@ export function Logo({ variant }) {
 Logo.propTypes = {
   variant: PropTypes.oneOf(['header', 'footer']).isRequired,
 };
+
+Logo.defualtProps = {
+  variant: 'header',
+};
