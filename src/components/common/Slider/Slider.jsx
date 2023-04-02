@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { SlideCard } from '../SlideCard/SlideCard';
 import 'swiper/swiper.min.css';
 import './Slider.css';
+import { useRef } from 'react';
 
 function Arrow({ className }) {
   return (
@@ -26,21 +27,45 @@ Arrow.propTypes = {
 };
 
 export function Slider({ slides }) {
+  const swiperRef = useRef(null);
+
+  const swiperParams = {
+    slidesPerView: 'auto',
+    spaceBetween: 48,
+    initialSlide: 0,
+    loopedSlides: 3,
+    loop: true,
+    rewind: true,
+    navigation: {
+      nextEl: '.swiper-button-next-custom',
+      prevEl: '.swiper-button-prev-custom',
+    },
+    modules: [Navigation],
+    on: {
+      init: () => {
+        swiperRef.current.swiper.slideNext();
+      },
+    },
+    // breakpoints: {
+    //   0: {
+    //     slidesPerView: 1,
+    //     spaceBetween: 10,
+    //     centeredSlides: true,
+    //   },
+    //   1024: {
+    //     slidesPerView: 2,
+    //     spaceBetween: 24,
+    //   },
+    //   1366: {
+    //     slidesPerView: 3,
+    //     spaceBetween: 48,
+    //   },
+    // },
+  };
   return (
     <>
-      <Swiper
-        slidesPerView={3}
-        spaceBetween={48}
-        initialSlide={0}
-        loopedSlides={3}
-        loop
-        navigation={{
-          prevEl: '.swiper-button-prev',
-          nextEl: '.swiper-button-next',
-        }}
-        modules={[Navigation]}
-      >
-        {slides.map((slide) => (
+      <Swiper {...swiperParams} ref={swiperRef}>
+        {slides.map(slide => (
           <SwiperSlide key={slide.id}>
             <SlideCard
               name={slide.name}
@@ -53,12 +78,18 @@ export function Slider({ slides }) {
         ))}
       </Swiper>
       <div className="controller">
-        <div className="swiper-button swiper-button-prev">
+        <button
+          className="swiper-button swiper-button-prev-custom"
+          onClick={() => swiperRef.current.swiper.slidePrev()}
+        >
           <Arrow className="swiper-icon swiper-icon--left" />
-        </div>
-        <div className="swiper-button swiper-button-next">
+        </button>
+        <button
+          className="swiper-button swiper-button-next-custom"
+          onClick={() => swiperRef.current.swiper.slideNext()}
+        >
           <Arrow className="swiper-icon swiper-icon" />
-        </div>
+        </button>
       </div>
     </>
   );

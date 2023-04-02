@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
 import { Slider } from '../../../common/Slider/Slider';
 import { Title } from './CustomersSay.styled';
+import { CustomersSayStyled } from './CustomersSay.styled';
 
 import photo1 from '../../../common/Slider/SliderImg/photo_1.svg';
 import photo2 from '../../../common/Slider/SliderImg/photo_2.svg';
@@ -40,13 +41,37 @@ export function CustomersSay({ title }) {
       img: photo3,
       pos: 'Visual Creator',
     },
+    {
+      id: 5,
+      name: 'Cory Delmeir',
+      title: 'Works for both!',
+      desc: "HireArt is one of the few companies in the industry that has good spaces for both Hr specialists and artistic minds. This service respects users and saves time. Their interface is also very intuitive to use and does an awesome job of simplifying a very complex applying and hiring profile. I'm extremely happy with HireArt. ",
+      img: photo3,
+      pos: 'Visual Creator',
+    },
+    {
+      id: 6,
+      name: 'Cory Delmeir',
+      title: 'Works for both!',
+      desc: "HireArt is one of the few companies in the industry that has good spaces for both Hr specialists and artistic minds. This service respects users and saves time. Their interface is also very intuitive to use and does an awesome job of simplifying a very complex applying and hiring profile. I'm extremely happy with HireArt. ",
+      img: photo3,
+      pos: 'Visual Creator',
+    },
+    {
+      id: 7,
+      name: 'Cory Delmeir',
+      title: 'Works for both!',
+      desc: "HireArt is one of the few companies in the industry that has good spaces for both Hr specialists and artistic minds. This service respects users and saves time. Their interface is also very intuitive to use and does an awesome job of simplifying a very complex applying and hiring profile. I'm extremely happy with HireArt. ",
+      img: photo3,
+      pos: 'Visual Creator',
+    },
   ];
 
   return (
-    <div>
+    <CustomersSayStyled>
       <Title>{title}</Title>
       <Slider slides={slides} />
-    </div>
+    </CustomersSayStyled>
   );
 }
 
