@@ -1,5 +1,5 @@
 .swiper-slide {
-  width: 25%;
+  width: auto !important;
 }
 .swiper-icon {
   width: 8px;
@@ -24,6 +24,11 @@
 }
 .controller {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-top: 40px;
+}
+@media (min-width: 767px) {
+  .controller {
+    justify-content: center;
+  }
 }
