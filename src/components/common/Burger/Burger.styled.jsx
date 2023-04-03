@@ -5,11 +5,11 @@ export const StyledBurger = styled.div`
   width: 2rem;
   height: 2rem;
   position: fixed;
-  top: 24px;
+  top: 20px;
   right: 16px;
   display: none;
   transition: all 0.3s ease 0s;
-  z-index: 50;
+  z-index: 101;
   @media (max-width: 768px) {
     display: flex;
     flex-direction: column;
@@ -20,19 +20,23 @@ export const StyledBurger = styled.div`
       width: 2rem;
       height: 0.2rem;
       ${(props) => css`
-        background-color: ${({ open }) => open ? props.theme.colors.N4 : props.theme.colors.Purple5};
-        border-radius: 10px;
-        &:nth-child(1) {
-          transform: ${({ open }) => open ? 'rotate(45deg) translate(10px,0px)' : 'rotate(0)'};
-        }
-        &:nth-child(2) {
-          transform: ${({ open }) => open ? 'translateX(100%)' : 'translateX(0)'};
-          opacity: ${({ open }) => (open ? 0 : 1)};
-        }
-        &:nth-child(3) {
-          transform: ${({ open }) => open ? 'rotate(-45deg) translate(13px,-4px)' : 'rotate(0)'};
-        }
-      `}
+          background-color: ${({ isOpen }) =>
+      isOpen ? props.theme.colors.N4 : props.theme.colors.Purple5};
+          border-radius: 10px;
+          &:nth-child(1) {
+            transform: ${({ isOpen }) =>
+      isOpen ? "rotate(45deg) translate(10px,5px)" : "rotate(0)"};
+          }
+          &:nth-child(2) {
+            transform: ${({ isOpen }) =>
+      isOpen ? "translateX(100%)" : "translateX(0)"};
+            opacity: ${({ isOpen }) => (isOpen ? 0 : 1)};
+          }
+          &:nth-child(3) {
+            transform: ${({ isOpen }) =>
+      isOpen ? "rotate(-45deg) translate(9px,-4px)" : "rotate(0)"};
+          }
+        `}
     }
   }
 `;

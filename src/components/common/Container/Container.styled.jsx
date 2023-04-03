@@ -12,10 +12,10 @@ export const StyledContainer = styled.div`
   padding-right: ${(props) => props.theme.offset.pxMobile};
   @media screen and (min-width: 768px) {
     max-width: ${({
-    theme: {
-      offset: { maxWidth, pxDesktop },
-    },
-  }) => `calc(${maxWidth} + ${pxDesktop} * 2)`};
+  theme: {
+    offset: { maxWidth, pxDesktop },
+  },
+}) => `calc(${maxWidth}px + ${pxDesktop} * 2)`};
     padding-left: ${(props) => props.theme.offset.pxDesktop};
     padding-right: ${(props) => props.theme.offset.pxDesktop};
   }

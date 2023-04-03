@@ -5,11 +5,13 @@ export function Link({
  to, children, end, className, style 
 }) {
   return (
-    <StyledLink className={className} style={style} end={end} acti to={to}>
+    <StyledLink className={className} style={style} end={end} to={to}>
       {children}
     </StyledLink>
   );
 }
+
+
 
 Link.propTypes = {
   to: PropTypes.string.isRequired,
@@ -18,3 +20,4 @@ Link.propTypes = {
   className: PropTypes.oneOfType([PropTypes.string, PropTypes.func]),
   style: PropTypes.oneOfType([PropTypes.object, PropTypes.func]),
 };
+

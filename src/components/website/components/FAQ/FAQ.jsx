@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
 import { ICON_TYPES } from '../../../common/Icon';
-import { Accardion } from '../../../common/Accardion';
+import { Accardion } from '../../../common/Accardion/Accardion';
 import {
   AccordionSection,
   AccordionInfo,
