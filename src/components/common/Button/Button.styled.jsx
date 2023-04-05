@@ -3,10 +3,14 @@ import PropTypes from 'prop-types';
 import { inlineFlex } from '../../../styles/mixins';
 import { Icon } from '../Icon';
 
+export const StyledText = styled.span`
+  transition: color 0.2s ease-in-out;
+`;
+
 export const StyledIcon = styled(Icon)`
   transition: fill 0.2s ease-in-out;
   flex-shrink: 0;
-  ${(props) =>
+  ${props =>
     props.position === 'right'
       ? css`
           order: 2;
@@ -28,7 +32,7 @@ export const StyledButton = styled.button`
   &:disabled {
     cursor: not-allowed;
   }
-  ${(props) => {
+  ${props => {
     switch (props.variant) {
       case 'primary':
         return css`
@@ -212,9 +216,11 @@ export const StyledButton = styled.button`
             }
           }
         `;
+      default:
+        return '';
     }
   }}
-  ${(props) => {
+  ${props => {
     switch (props.size) {
       case 'standart':
         return css`
@@ -242,6 +248,8 @@ export const StyledButton = styled.button`
             height: 20px;
           }
         `;
+      default:
+        return '';
     }
   }}
 `;
@@ -261,7 +269,3 @@ StyledButton.defaultProps = {
   variant: 'primary',
   size: 'standart',
 };
-
-export const StyledText = styled.span`
-  transition: color 0.2s ease-in-out;
-`;

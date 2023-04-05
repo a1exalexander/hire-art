@@ -5,7 +5,9 @@ export default {
   component: Best,
 };
 
-const Template = (args) => <Best {...args} />;
+function Template(args) {
+  return <Best {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {};

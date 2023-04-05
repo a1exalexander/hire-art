@@ -1,5 +1,5 @@
-import { Container } from "../../../common/Container";
+import { Container } from '../../../common/Container';
 
-export const Services = () => {
+export function Services() {
   return <Container>Services</Container>;
-};
+}

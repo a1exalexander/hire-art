@@ -5,7 +5,9 @@ export default {
   component: Home,
 };
 
-const Template = (args) => <Home {...args} />;
+function Template(args) {
+  return <Home {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {};

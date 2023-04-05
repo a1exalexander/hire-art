@@ -12,7 +12,7 @@ export default {
     },
     color: {
       control: { type: 'color' },
-      defaultValue: 'black'
+      defaultValue: 'black',
     },
     size: {
       control: { type: 'range', min: 10, max: 100 },
@@ -20,26 +20,27 @@ export default {
   },
 };
 
-const Template = (args) => <SocialButton {...args} />;
-
-const TemplateDark = (args) => (
-  <div style={{ backgroundColor: '#07063D', padding: '32px' }}>
-    <SocialButton {...args} />
-  </div>
-);
+function TemplateDark(args) {
+  return (
+    <div style={{ backgroundColor: '#07063D', padding: '32px' }}>
+      <SocialButton {...args} />
+    </div>
+  );
+}
 export const Single = TemplateDark.bind({});
 Single.args = {
   name: SOCIAL_ICON_TYPES.insta,
+  fill: 'white',
 };
 
-export const Multiple = () => {
+export function Multiple() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
-      {Object.values(SOCIAL_ICON_TYPES).map((icon) => (
+      {Object.values(SOCIAL_ICON_TYPES).map(icon => (
         <div key={icon} style={{ margin: '8px' }}>
           <SociaIcons size={32} name={icon} />
         </div>
       ))}
     </div>
   );
-};
+}

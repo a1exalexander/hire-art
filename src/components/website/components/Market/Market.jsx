@@ -1,5 +1,5 @@
 import { Container } from '../../../common/Container';
 
-export const Market = () => {
+export function Market() {
   return <Container>Market</Container>;
-};
+}

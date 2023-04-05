@@ -8,7 +8,7 @@ import { Hero } from '../../components/Hero';
 import { Market } from '../../components/Market';
 import { Services } from '../../components/Services';
 
-export const Home = () => {
+export function Home() {
   return (
     <>
       <Navigation />
@@ -17,9 +17,13 @@ export const Home = () => {
       <Comment />
       <Best />
       <Market />
-      <CustomersSay />
-      <FAQ />
+      <CustomersSay title="What Our Customers Say" />
+      <FAQ
+        title="Frequently asked questions"
+        description="Don't see your question? Email "
+        link="help@hireart.com"
+      />
       <Footer />
     </>
   );
-};
+}

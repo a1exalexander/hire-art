@@ -18,14 +18,16 @@ export default {
   },
 };
 
-const Template = (args) => <Icon {...args} />;
+function Template(args) {
+  return <Icon {...args} />;
+}
 
 export const Single = Template.bind({});
 Single.args = {
   name: ICON_TYPES.filter,
 };
 
-export const Multiple = () => {
+export function Multiple() {
   return (
     <div style={{ display: 'flex', flexWrap: 'wrap' }}>
       {Object.values(ICON_TYPES).map((icon) => (
@@ -35,4 +37,4 @@ export const Multiple = () => {
       ))}
     </div>
   );
-};
+}

@@ -24,6 +24,11 @@
 }
 .controller {
   display: flex;
-  justify-content: center;
+  justify-content: left;
   margin-top: 40px;
+}
+@media (min-width: 767px) {
+  .controller {
+    justify-content: center;
+  }
 }

@@ -1,17 +1,19 @@
-import PropTypes, { string } from 'prop-types';
+/* eslint-disable react/jsx-props-no-spreading */
+import PropTypes from 'prop-types';
 
 export const ICON_TYPES = {
-  filter: 'filter',
-  piggyBank: 'piggyBank',
-  plus: 'plus',
-  minus: 'minus',
-  logoHeader: 'logoHeader',
-  logoFooter: 'logoFooter',
-  arrowDown: 'arrowDown',
-  pen: 'pen',
+  filter: "filter",
+  piggyBank: "piggyBank",
+  plus: "plus",
+  minus: "minus",
+  logoHeader: "logoHeader",
+  logoFooter: "logoFooter",
+  arrowDown: "arrowDown",
+  pen: "pen",
+  singOut: "singOut",
 };
 
-export const Icon = ({ className, name, size, color }) => {
+export function Icon({ className, name, size, color }) {
   const props = {
     className,
   };
@@ -167,14 +169,29 @@ export const Icon = ({ className, name, size, color }) => {
           />
         </svg>
       );
+    case ICON_TYPES.singOut:
+      return (
+        <svg
+          {...props}
+          viewBox="0 0 18 20"
+          fill="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            fillRule="evenodd"
+            clipRule="evenodd"
+            d="M8.71967 0.21967C9.01256 -0.0732233 9.48744 -0.0732233 9.78033 0.21967L13.2803 3.71967C13.5732 4.01256 13.5732 4.48744 13.2803 4.78033C12.9874 5.07322 12.5126 5.07322 12.2197 4.78033L10 2.56066V12.75C10 13.1642 9.66421 13.5 9.25 13.5C8.83579 13.5 8.5 13.1642 8.5 12.75V2.56066L6.28033 4.78033C5.98744 5.07322 5.51256 5.07322 5.21967 4.78033C4.92678 4.48744 4.92678 4.01256 5.21967 3.71967L8.71967 0.21967ZM1.25 10C1.66421 10 2 10.3358 2 10.75V16.75C2 17.4404 2.55964 18 3.25 18H15.25C15.9404 18 16.5 17.4404 16.5 16.75V10.75C16.5 10.3358 16.8358 10 17.25 10C17.6642 10 18 10.3358 18 10.75V16.75C18 18.2688 16.7688 19.5 15.25 19.5H3.25C1.73122 19.5 0.5 18.2688 0.5 16.75V10.75C0.5 10.3358 0.835786 10 1.25 10Z"
+          />
+        </svg>
+      );
     default:
       return null;
   }
-};
+}
 
 Icon.propTypes = {
   className: PropTypes.string,
   name: PropTypes.oneOf(Object.values(ICON_TYPES)).isRequired,
-  size: PropTypes.number,
+  size: PropTypes.oneOfType([PropTypes.number, PropTypes.string]),
   color: PropTypes.string,
 };

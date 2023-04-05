@@ -5,7 +5,9 @@ export default {
   component: Services,
 };
 
-const Template = (args) => <Services {...args} />;
+function Template(args) {
+  return <Services {...args} />;
+}
 
 export const Default = Template.bind({});
 Default.args = {};

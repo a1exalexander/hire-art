@@ -14,12 +14,16 @@ export default {
   },
 };
 
-const Template = (args) => <Button {...args} />;
-const TemplateDark = (args) => (
-  <div style={{ backgroundColor: 'black', padding: '32px' }}>
-    <Button {...args} />
-  </div>
-);
+function Template(args) {
+  return <Button {...args} />;
+}
+function TemplateDark(args) {
+  return (
+    <div style={{ backgroundColor: 'black', padding: '32px' }}>
+      <Button {...args} />
+    </div>
+  );
+}
 
 export const Primary = Template.bind({});
 Primary.args = {
